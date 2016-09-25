@@ -12,6 +12,8 @@ use App\Http\Models\Proposal;
 use App\Http\Models\Savejob;
 use App\Http\Models\Notifications;
 use App\Http\Models\Job;
+use App\Http\Models\Money;
+use App\Http\Models\Credit;
 use Illuminate\Http\Request;
 use LaravelAcl\Authentication\Models\UserProfile;
 use View, Input, Redirect, App, Config,Session,Mail;
@@ -175,16 +177,32 @@ class WelcomeController extends Controller {
 		
 		if((Input::get('q'))):
 			$q = Input::get('q');
+			
+			$l_name = explode(" ", $q);
+			$q = $l_name[0];
+			$la_name='';
+			if(isset($l_name[1])):
+				$la_name=$l_name[1];
+			endif;
 		else:
 			$q='';
+			$la_name='';
 		endif;
+		
+		if((Input::get('l'))):
+			$l = Input::get('l');
+		else:
+			$l='';
+		endif;
+	
 		
 		$skills = Skill::get();
 		$options = array();
 
-		$users = UserProfile::ByUseractivate(1)->ByUsertype($user_type)->ByUserskill($skill)->where(function($query) use ($q) {
+		$users = UserProfile::ByUseractivate(1)->ByUsertype($user_type)->ByUserskill($skill)->where(function($query) use ($q,$l,$la_name) {
 							return $query->where('first_name', 'LIKE', '%'. $q .'%')
-								->orWhere('last_name','LIKE', '%'. $q .'%');
+								->Where('last_name','LIKE', '%'. $la_name .'%')
+								->Where('user_id','LIKE', '%'. $l .'%');
 							})->paginate(10); 
 		$users->setPath('');	
 		$users->appends(array('search_type'=>Input::get('search_type'),'q' => Input::get('q')));
@@ -300,6 +318,26 @@ class WelcomeController extends Controller {
 		$feedback_employee = Feedback::where("employee_id",  $profile->user_id)->where('employee_rating','!=','')->avg('employee_rating');
 		
 		return view::make('user.profile')->with([ 'profile'   => $profile,'tagline'=>$tag_line['value'],'feedback_freelancer'=>$feedback_freelancer,'feedback_employee'=>$feedback_employee,'user'=>$logged_user,'save_user'=>$save_user, 'working_jobs'=>$working_jobs,'degree'=>$degree,'education'=>$education]);
+	}
+	
+	public function user_Agreement(){
+		$logged_user = $this->auth->getLoggedUser();
+		if($logged_user->user_profile[0]->profile_field_type->value!='Buyer' && $logged_user->user_profile[0]->profile_field_type->value!='Both'):
+			//return view('laravel-authentication-acl::client.exceptions.404');
+		endif;
+		
+		$my_jobs = Contract::with('job','proposal','proposal_selected')->JobUserid($logged_user->id)->orderBy('created_at', 'desc')->paginate(10);
+		$my_jobs->setPath('');
+		
+		$money = Money::where('user_id',$logged_user->id)->orderBy('id','desc')->first();
+		if(isset($money->total_amount)):
+			$money= round($money->total_amount,2);
+		else:
+			$money=0.00;
+		endif;
+		$credit_accounts = Credit::where('user_id',$logged_user->id)->get();
+	
+		return view::make('job.user_Agreement')->with([ 'my_jobs'   => $my_jobs, 'money' => $money, 'amount'=>0,'credit_methods'=>0, 'credit_accounts'   => $credit_accounts]);
 	}
 	
 	public function viewNotification()

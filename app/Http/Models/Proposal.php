@@ -72,7 +72,7 @@ class Proposal extends Model {
     {
         $created = new Carbon($value);
 		$now = Carbon::now();
-		return $created->diffForHumans($now);
+		return $created->format('M d, Y H:i A');
     }
 	
 	public function getModifiedUpdatedAtAttribute($value)

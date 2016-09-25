@@ -130,6 +130,11 @@ Route::get('all-members', [
 				
 		]);
 		
+Route::get('/user_Agreement', [
+				'as'   => 'welcome.user_Agreement',
+				'uses' => 'WelcomeController@user_Agreement'
+		]);
+		
 Route::get('job/notification',[
 			'as' => 'job.viewNotification',
 			'uses' => 'WelcomeController@viewNotification',

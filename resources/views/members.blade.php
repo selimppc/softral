@@ -30,7 +30,9 @@ Softral - Welcome to Softral
 		<option value="{!! $skill->id !!}" @if(Input::get('skill')==$skill->id) Selected='selected' @endif>{!! $skill->skill !!}</option>
 	@endforeach
  </select>
- 
+  <br>
+ <h4>Account Number</h4>
+	<input type="text" name="l" class="form-control" placeholder="Search Account Number" value="{{Input::get('l')}}"><br/>
  </div></div> <input type="submit" class="btn btn-danger btn-sm btn-search" value="Search">
 
               </fieldset>
@@ -73,7 +75,7 @@ Softral - Welcome to Softral
 			                  <div class="caption">
                   <h4>
 				 
-					<a href="{!! URL::to('/user/profile').'/'.$proposal->user->user_profile[0]->slug !!}">{{ $proposal->first_name}}</a>
+					<a href="{!! URL::to('/user/profile').'/'.$proposal->user->user_profile[0]->slug !!}">{{ $proposal->first_name}} {{ $proposal->last_name}}</a>
 				 
 				</h4>
 				 <div class="price"><span class="glyphicon glyphicon-map-marker"></span> @if($proposal->city!=null){!! $proposal->city.',' !!}@endif

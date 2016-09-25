@@ -30,7 +30,7 @@ if (!isset($friend_request_user_id))
  * ---------------------------------------------------------------------------------------
  */
 
-include_once 'recent-user.php';
+include_once 'chat-recent-user.php';
 
 /**
  * End of
@@ -45,7 +45,7 @@ include_once 'recent-user.php';
  * --------------------------------------------------------------------------------------------------------------
  */
 
-include_once 'contact-user.php';
+include_once 'chat-contact-user.php';
 
 
 
@@ -62,7 +62,7 @@ include_once 'contact-user.php';
  * ------------------------------------------------------------------------------------------------
  */
 
-//include_once 'group-name.php';
+//include_once 'chat-group-name.php';
 /**
  * End of
  * Groups Name
@@ -72,7 +72,7 @@ include_once 'contact-user.php';
 /**
  * Pending Friend Request
  */
-//include_once 'pending-user.php';
+include_once 'chat-pending-user.php';
 /*
  * End of Section
  * Pending Friend Request

@@ -10,7 +10,7 @@ function load_all_messasges(){
     //alert("chat-chat.js load_all_messages()");
     console.log("chat-chat.js load_all_messages()");
     localStorage['lpid']=$(".msgs .msg:last").attr("title");
-    console.log('load_all_messages');
+    //console.log('load_all_messages');
     console.log($(".msgs .msg:last").attr("title"));
     
     
@@ -22,7 +22,7 @@ function load_all_messasges(){
     
     
     var user_prof_pic_url = $("#friend_rquest_user_prof_pic").attr('src');
-    console.log(user_prof_pic_url);
+    //console.log(user_prof_pic_url);
     
     var groupid = $("#groupid").val();
     var usertype = $("#usertype").val();
@@ -43,6 +43,7 @@ function load_all_messasges(){
     }
 }
 var arr = [];
+
 function load_new_messasges(){
     console.log('chat-chat.js load_new_messages()');
     localStorage['lpid']=$(".msgs .msg:last").attr("title");
@@ -55,24 +56,28 @@ function load_new_messasges(){
     
     //console.log(last_message);
     
+    var chattype = $("#chattype").val();
+    
+    var sendto = $("#friend_request_user_id").val();
+    var groupid = $("#groupid").val();
+    var usertype = $("#usertype").val();
+
+    var user_prof_pic_url = $("#friend_rquest_user_prof_pic").attr('src');
+        
+
+    
     if(last_message != null){
+        
         /**
          * IF conversation blank and at that time friend sents some message then the new message will not display.. beacause last_message is null
          */
-        //alert("aaaaaaaa");
-        var chattype = $("#chattype").val();
-    
-        var sendto = $("#friend_request_user_id").val();
-        var groupid = $("#groupid").val();
-        var usertype = $("#usertype").val();
-    
-        
     
         if(sendto != '' || groupid != ''){
         
             $.post(base_url + "chat-new-msgs.php",{ 
                 chattype: chattype,
                 sendto: sendto,
+                user_prof_pic_url: user_prof_pic_url,
                 groupid: groupid,
                 usertype: usertype,
                 last_message: last_message,
@@ -80,42 +85,179 @@ function load_new_messasges(){
             },function(data) {
                 //$(".msgs").html(data);
                 
-                //console.log(localStorage['lpid']);
                 if($.inArray(localStorage['lpid'], arr) < 0) {
-                    //console.log("is NOT in array");
                     $(".msgs").append(data);
+                    
+                    
+                    /**
+                       * Remove the duplicate Message in chatbox
+                       */
+                    var seen = {};
+                    $('div.msgs input.mess_id').each(function() {
+                        //var txt = $(this).text();
+                        var txt = $(this).val();
+                        if (seen[txt])
+                            $(this).parent().remove();
+                        else
+                            seen[txt] = true;
+                    });
+
+
+                /**
+                        * Remove the duplicate Message in chatbox
+                        * End Section
+                        */
+                    
                 } else {
-                    //console.log("is in array");
                     return false;
                 }
                 
             
                 if(localStorage['lpid']!=$(".msgs .msg:last").attr("title")){
                     arr.push(localStorage['lpid']);
-                    //console.log(arr);
                     scTop();
                 }
-                
-            //console.log(localStorage['lpid']);
-            //console.log($(".msgs .msg:last").attr("title"));
             });
         }
-    
-                   
-                   
-    //        $(".msgs").load(base_url + "chat-new-msgs.php?last_message="+$(".msgs .msg:last").attr("title"),{ 
-    //            chattype: chattype,
-    //            sendto: sendto,
-    //            groupid: groupid,
-    //            usertype: usertype
-    //        },function(){
-    //            if(localStorage['lpid']!=$(".msgs .msg:last").attr("title")){
-    //                scTop();
-    //            }
-    //        });
+    }else{
+    /**
+         * IF conversation blank and at that time friend sents some message then 
+         * the new message will display here
+         */
+        
+        
+    //load_all_messasges();
+        
+        
     }
 }
 
+function load_new_user(){
+
+    
+
+    var recent_msg_id = $( ".recent_msg_id" ).first().html();
+    
+
+    if(recent_msg_id != null){
+        $.post(base_url + "chat-new-recent-user.php",{ 
+            recent_msg_id: recent_msg_id
+        },function(data) {
+            
+            $(data).insertAfter("div#recent-user h4.online_green");
+            
+            
+            /**
+             * Remove the duplicate name in recent Message in left side
+             */
+            var seen = {};
+            $('div#recent-user label.userid').each(function() {
+                var txt = $(this).text();
+                if (seen[txt])
+                    $(this).parent().remove();
+                else
+                    seen[txt] = true;
+            });
+            
+            
+        /**
+             * Remove the duplicate name in recent Message in left side
+             * End Section
+             */
+        });
+    }
+
+}
+
+function load_new_contact(){
+    var recent_msg_id = $( ".recent_msg_id" ).first().html();
+    
+
+    if(recent_msg_id != null){
+        $.post(base_url + "chat-new-contact-user.php",{ 
+            recent_msg_id: recent_msg_id
+        },function(data) {
+            
+            $(data).insertAfter("div#all-user h4.online_green");
+            
+            
+            /**
+             * Remove the duplicate name in recent Message in left side
+             */
+            var seen = {};
+            $('div#all-user label.userid').each(function() {
+                var txt = $(this).text();
+                if (seen[txt])
+                    $(this).parent().remove();
+                else
+                    seen[txt] = true;
+            });
+            
+            
+        /**
+             * Remove the duplicate name in recent Message in left side
+             * End Section
+             */
+        });
+    }
+}
+function load_new_friendrequest(){
+    
+    var recent_friendlist_id = $( ".recent_friendlist_id" ).first().html();
+    
+    if(recent_friendlist_id != null){
+        $.post(base_url + "chat-new-pending-user.php",{ 
+            recent_friendlist_id: recent_friendlist_id
+        },function(data) {
+            
+            //console.log(data);
+            
+            $(data).insertAfter("div#all-pending-requests h4.online_green");
+            
+            var numItems = $('.pending-request').length;
+            console.log(numItems);
+            
+            $("#no-of-pending-request sup").html(numItems);
+            
+        });
+    }else{
+        $.post(base_url + "chat-new-pending-user.php",{ 
+            recent_friendlist_id: null
+        },function(data) {
+            
+            //console.log(data);
+            
+            $(data).insertAfter("div#all-pending-requests h4.online_green");
+            
+            var numItems = $('.pending-request').length;
+            console.log(numItems);
+            
+            //$("#no-of-pending-request").html(" <img height='20' wdith='20' src='"+base_url+"images/Profile_AddFriend-24.png'><sup style='color:red'>"+numItems+"</sup>");
+            
+            
+            
+            
+            
+            
+            if(parseInt(numItems)>0){
+                console.log("aaaaaaa");
+                $("#no-of-pending-request").removeClass("hide");
+                $("#no-of-pending-request").html(" <img height='20' wdith='20' src='"+base_url+"images/Profile_AddFriend-24.png'><sup style='color:red'>"+numItems+"</sup>");
+                
+            }else{
+                console.log("bbbbbbbbbb");
+            }
+            
+            
+            //$("#no-of-pending-request sup").html(numItems);
+            //$("#no-of-pending-request").removeClass("hide");
+            
+            
+            
+            
+        });
+    }
+}
 function load_new_stuff(){
     localStorage['lpid']=$(".msgs .msg:last").attr("title");
     
@@ -182,7 +324,7 @@ $(".home").on('click', function(){
             console.log('bbbbbbbbbbbbbbbb');
             $(".back-chat-left-panel").hide();
         }
-        //Mobile End Here
+    //Mobile End Here
     });
     $(this).siblings().removeClass("chat-left-menu-active");
     $(this).addClass("chat-left-menu-active");
@@ -233,13 +375,24 @@ $(".pending-requests").on('click', function(){
  */
 $("#accept-friend-request").on("click", function(){
     var friend_request_user_id = $("#friend_request_user_id").val();
+    
     var action = 'accept';
+    
+    
     $.post(base_url + "chat-friend-request.php",{
         friend_request_user_id: friend_request_user_id,
         action: action
     },function(response){
-        console.log(response);
-        $(".netnoor-user-active").find('.friend-status').text("accepted");
+        //console.log(response);
+        //$(".netnoor-user-active").find('.friend-status').text("accepted");
+        //
+        //$("#all-pending-requests .active-user").addClass('hide');
+        $("#all-pending-requests .active-user").remove();
+        var numItems = $('.pending-request').length;
+        console.log(numItems);    
+        $("#no-of-pending-request sup").html(numItems);
+        
+        
         $("#reponse-friend-request").addClass('hide');
     });
 });
@@ -304,16 +457,19 @@ $("#chatbox-left-panel-search").on('keyup', function(){
               * Select user to send Friend Request
               */
             $(".netnoor-user").on("click", function(){
+                //$("#all-netnoor-user").delegate(".netnoor-user", "click", function(){ 
+            
+            
+            
                 
                 
-                
-                $(".request").addClass("hide");
+                $(".request").addClass("hide"); ///?? Where is this request class??
                 $("#friend-request").removeClass("hide");
 				
 
                 $("#send-box").removeClass("hide");
                 $("#chattype").val('individual');
-                $("#sendto").val(($(this).find("label").text()));
+                $("#sendto").val(($(this).find("label.userid").text()));
                 $("#groupid").val("");
                 
                 
@@ -325,19 +481,33 @@ $("#chatbox-left-panel-search").on('keyup', function(){
                 $("#friend_request_user_id").val(($(this).find(".userid ").text()));
                 
                 
-                var friend_staus = $(this).find(".friend-status").text();
-                var friend_request_type = $(this).find(".friend-request-type").text();
+                var friend_staus = $(this).find(".friend-status").text();   // This line is not there in Recent and My Conatct Section
+                var friend_request_type = $(this).find(".friend-request-type").text();// This line is not there in Recent and My Conatct Section
                
                 
+                
+              
+                
+                
+                
+                
+                
                 /** Clear Message box*/
-                $(".msgs").html("");
-                $("#msg_form").addClass("hide");
+                //$(".msgs").html("");
+                $(".msgs").html("<img id='chat-loader' src='"+base_url+"images/ajax-loader.gif'>");
+                //$("#msg_form").addClass("hide");
+                $("#msg_form").removeClass("hide");
+                
+                
+
+                
                 
                 /**
                  * End of Section
                  * Clear Message box
                  */
-
+                //alert(friend_staus);
+                console.log(friend_staus);
                 
                 if(friend_staus == ''){
                     /**
@@ -384,6 +554,42 @@ $("#chatbox-left-panel-search").on('keyup', function(){
                     $(".request").addClass('hide');
                     $("#request-sent").removeClass('hide');
                 }
+                
+                
+                
+                
+                //-------
+                $('.netnoor-user').removeClass('active-user'); // Just remove class from all user
+                $(this).addClass("active-user");
+
+                //                var viewportWidth = $(document).width();
+                //                console.log(viewportWidth);
+                //                if (viewportWidth < 480) {
+                //                    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+                //                    $(".chatbox-left-panel").hide();
+                //                    $(".chatbox").show();
+                //                }
+
+
+                
+
+
+
+
+
+                
+
+                $("#send-box").removeClass("hide"); // Clear the text box from where user can sent a message to his friends
+                $("#chattype").val('individual');   //If indiviadaul user is selected to chat
+
+
+                $("#sendto").val(($(this).find("label.userid").text()));
+                $("#groupid").val("");
+
+
+                load_all_messasges();
+            //-------
+                
             //load_new_stuff();
             });
             
@@ -511,15 +717,41 @@ setInterval(function(){
     //If User sleected for Chatting then only run this function...
     load_new_messasges();
 //},5000);
-},1500);    // Changed on 30/08/2016  so that the new maagesses shown on chat box faster
+//},1500);    // Changed on 30/08/2016  so that the new maagesses shown on chat box faster
+},1500);
+
+
+
+
+//setInterval(function(){
+//    var usertype = $("#usertype").val();
+//    var friend_request_user_id = $("#friend_request_user_id").val();
+//    
+//    console.log(friend_request_user_id);
+//    
+//    $(".users").load(base_url + "chat-users.php?usertype="+usertype+"&friend_request_user_id="+friend_request_user_id);
+////},20000);
+//},20000);
+
+
 
 setInterval(function(){
-    var usertype = $("#usertype").val();
-    var friend_request_user_id = $("#friend_request_user_id").val();
-    
-    console.log(friend_request_user_id);
-    
-    $(".users").load(base_url + "chat-users.php?usertype="+usertype+"&friend_request_user_id="+friend_request_user_id);
-//},60000);
-//},30000);
-},20000);
+    //If User sleected for Chatting then only run this function...
+    load_new_user();
+//},1500);
+},6000);
+
+
+
+setInterval(function(){
+    //If User sleected for Chatting then only run this function...
+    load_new_contact();
+//},1500);
+},6000);
+
+
+setInterval(function(){
+    //If User sleected for Chatting then only run this function...
+    load_new_friendrequest();
+//},1500);
+},6000);

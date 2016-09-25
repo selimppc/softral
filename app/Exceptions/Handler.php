@@ -46,7 +46,7 @@ class Handler extends ExceptionHandler {
 		else
 		{
 			
-			//return redirect()->guest('errors')->withErrors([ 'There is some problem while processing this request, pleast try again later.']);
+			return redirect()->guest('errors')->withErrors([ 'There is some problem while processing this request, pleast try again later.']);
 			
 			return parent::render($request, $e);
 		}

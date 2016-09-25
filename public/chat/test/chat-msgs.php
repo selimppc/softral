@@ -76,11 +76,29 @@ if ($chattype == 'individual') {
 //                            ORDER BY id DESC LIMIT 20) sub ORDER BY id ASC");
     
     
-    $sql = $dbh->prepare("SELECT * FROM (
-                            SELECT a.id, a.sender_id, a.reciever_id, a.msg, a.msg_type, a.posted FROM chat_messages as a 
-                            where a.sender_id in('" . $_SESSION['id'] . "', '$sendto') 
-                                and a.reciever_id in('" . $_SESSION['id'] . "', '$sendto') 
-                            ORDER BY id DESC LIMIT 20) sub ORDER BY id ASC");
+    
+
+
+    /**
+     * Commenting on 19/09/2016
+     * By Sibbir Ahemd.
+     * No need to JOin since avatar is not required from database.
+     */
+//    $sql = $dbh->prepare("SELECT * FROM (
+//                            SELECT a.id, a.sender_id, a.reciever_id, a.msg, a.msg_type, a.posted FROM chat_messages as a 
+//                            where a.sender_id in('" . $_SESSION['id'] . "', '$sendto') 
+//                                and a.reciever_id in('" . $_SESSION['id'] . "', '$sendto') 
+//                            ORDER BY id DESC LIMIT 20) sub ORDER BY id ASC");
+    
+
+    
+      $sql = $dbh->prepare("SELECT * FROM 
+          (SELECT id, sender_id, reciever_id, msg, msg_type, posted FROM chat_messages 
+          where sender_id in('" . $_SESSION['id'] . "', '$sendto') and reciever_id in('" . $_SESSION['id'] . "', '$sendto')
+          ORDER BY id DESC LIMIT 20)sub ORDER BY id ASC");
+    
+            
+            
     
     /**
      * No need to join.. It working.. 
@@ -389,151 +407,11 @@ if (!isset($_SESSION['id']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 
     <li>Delete</li>
     <li>Paste</li> 
 </ul> 
-
-
-<script>
-    $(".me").on('mousedown', function(e){
-        if( e.button == 2 ) {
-            console.log("Right Click");
-            
-            var me = $(this);
-            $(".js-emaillink").html($(this).html());
-            $("#js-emaillink-edit").val($(me).next().val());
-        }
-    });
-    
-    
-    $(function(){
-        //        $('.context').jeegoocontext('menu');
-        $('.me').jeegoocontext('menu');
-        /*
-        $('.context').jeegoocontext('menu', {
-            data: $(this).html()
-        });
-         */
-    });
-    
-    
-    /**
-     * Copy
-     */
-    $(".js-emailcopybtn").click(function(){
-        console.log("copy");
-        $("#js-emaillink-edit").val("0");
-    });
-    
-    
-    
-    var copyEmailBtn = document.querySelector('.js-emailcopybtn');  
-    if(copyEmailBtn != null){
-        
-        
-        copyEmailBtn.addEventListener('click', function(event) {
-            
-            
-            // Select the email link anchor text  
-            var emailLink = document.querySelector('.js-emaillink');  
-            var range = document.createRange();  
-            range.selectNode(emailLink);  
-            window.getSelection().addRange(range);  
-    
-            try {  
-                // Now that we've selected the anchor text, execute the copy command  
-                var successful = document.execCommand('copy');  
-                var msg = successful ? 'successful' : 'unsuccessful';  
-                console.log('Copy email command was ' + msg);  
-            } catch(err) {  
-                console.log('Oops, unable to copy');  
-            }  
-    
-            // Remove the selections - NOTE: Should use   
-            // removeRange(range) when it is supported  
-            window.getSelection().removeAllRanges();  
-        });
-        
-        
-        /**
-         * End of section
-         * Copy
-         */
-        
-        
-        /**
-         * Edit
-         */
-        var editEmailBtn = document.querySelector('.js-emailcopybtn-edit');  
-        if(editEmailBtn != null){
-        
-        
-            editEmailBtn.addEventListener('click', function(event) {
-            
-                console.log('edited');
-            
-                // Select the email link anchor text  
-                var emailLink = document.querySelector('.js-emaillink');  
-                var range = document.createRange();  
-                range.selectNode(emailLink);  
-                window.getSelection().addRange(range);  
-                
-                
-                //                var range = document.createRange();
-                //                range.selectNode(document.getElementById('js-emaillink'));
-                //                window.getSelection().addRange(range);
-    
-                try {  
-                    // Now that we've selected the anchor text, execute the copy command  
-                    var successful = document.execCommand('copy');  
-                    var msg = successful ? 'successful' : 'unsuccessful';  
-                    console.log('Edit command was ' + msg);  
-                } catch(err) {  
-                    console.log('Oops, unable to edit');  
-                }  
-    
-                // Remove the selections - NOTE: Should use   
-                // removeRange(range) when it is supported  
-                window.getSelection().removeAllRanges();  
-            });
-    
-        }
-        
-        /**
-         * End of Section
-         * Edit
-         */
-    
-    }
-</script>
-
 <!--//Message Edit, Copy and Delete-->
 
+
 <style>
-/*  .bubble {
-    position: relative;
-    width: 250px;
-    height: 100px;
-    padding: 0px;
-
-    background: #ADB400;
-
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-
-  .bubble:after {
-    content: "";
-    position: absolute;
-    top: 35px;
-    left: -15px;
-    border-style: solid;
-    border-width: 15px 15px 15px 0;
-    border-color: transparent #ADB400;
-    display: block;
-    width: 0;
-    z-index: 1;
-}*/
-
-  .friend {
+     .friend {
     position: relative;
 /*    width: 250px;
     height: 100px;
@@ -581,10 +459,6 @@ if (!isset($_SESSION['id']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 
     width: 0;
 }
 
-</style>
-
-
-<style>
   .me {
     position: relative;
 /*    width: 250px;
@@ -623,5 +497,4 @@ if (!isset($_SESSION['id']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 
     top: -5px;*/
     width: 0;
 }
-
 </style>

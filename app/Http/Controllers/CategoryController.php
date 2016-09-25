@@ -160,7 +160,7 @@ class CategoryController extends Controller {
 				$message->to($freelancer_mail, 'From Softral Job')->subject('Softral - Contract Suspend / Hold notification');
 			});
 			
-		Session::flash('message', 'Congrats, You have successfully '.$input['submit'].'d the contract, '.$input['submit'].'d confirmation has been sent to the Employee.');
+		Session::flash('message', 'Congratulations, You have successfully '.$input['submit'].'d the contract, '.$input['submit'].'d confirmation has been sent to the Employee.');
 		return redirect('admin/contracts/list');
 		
 	}

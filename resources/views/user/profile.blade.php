@@ -46,26 +46,6 @@ Softral - My Profile
                 <div class="col-md-8">
                    
 
-                    <!--<div>
-
-                        <a href="#" class="btn btn-social btn-facebook">
-
-                            <i class="fa fa-facebook"></i>&nbsp; Facebook</a>
-
-                        <a href="#" class="btn btn-social btn-google">
-
-                            <i class="fa fa-google-plus"></i>&nbsp; Google</a>
-
-                        <a href="#" class="btn btn-social btn-twitter">
-
-                            <i class="fa fa-twitter"></i>&nbsp; Twitter </a>
-
-                        <a href="#" class="btn btn-social btn-linkedin">
-
-                            <i class="fa fa-linkedin"></i>&nbsp; Linkedin </a>
-
-                    </div>-->
-
 					 <?php $about_me = 'Nothing Specified Yet'; ?>
 
 				  <?php $skills='No skills selected'; ?>
@@ -106,14 +86,18 @@ Softral - My Profile
 
 							
                     </div>
+					
+				
 
-					 <div class="form-group col-md-8 ">
-                       
-						@foreach($profile->profile_field as $profile_field)
-
+				
+                   <div class="form-group col-md-8 news-section">      
+					@foreach($profile->profile_field as $profile_field)
 					@if( $profile_field->profile_field_type_id==2)
 						<?php $about_me = $profile_field->value; ?>
-					 <p><strong>About me : </strong>
+					 
+					 <div class="sponser_logo_title">  
+					<h4 style="text-transform:uppercase;">About me</h4>
+					</div>
 							<?php //break; ?>
 						 {!!$about_me!!}<hr>
 					@else
@@ -165,7 +149,7 @@ Softral - My Profile
 							
 					@endif
 				  @endforeach
-        </p>
+        
 						
 							@if(isset($education->value) && $education->value!='')
 								<?php $education = @unserialize($education->value); 
@@ -218,8 +202,8 @@ Softral - My Profile
 					@endif
 					<?php endif; ?>
 				
-                    </div>
-					
+                    
+				</div>	
 					<?php  
 					$profile=@unserialize($profile->resume); 
 					if ($profile !== false) :

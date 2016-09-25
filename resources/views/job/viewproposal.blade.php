@@ -29,10 +29,21 @@ Softral Job - View {!!  $proposal->job->project_name !!}
 			<div class="row-fluid">
 				<div class="col-md-12 panel panel-info">
 					<br>
+				
+			
+					
 					 <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-6">
-                         <h3 class="panel-title bariol-thin" style='font-size:26px'>{!! $proposal->job->project_name !!}</h3>
+                         <h3 class="panel-title bariol-thin" style='font-size:26px'>
+						 {!! $proposal->job->project_name !!} 
+						<span style='font-size:15px'> Job ID :{!! $proposal->job->id !!}</span>
+						 </h3>
+						 
+						 <div class="row-fluid">
+						<h5></h5>
+						
+					</div>	
                     </div>
 					
 					<div class="col-md-6" style='text-align:right;padding-top:5px'>
@@ -50,9 +61,15 @@ Softral Job - View {!!  $proposal->job->project_name !!}
 					</div>
                 </div>
             </div>    
+			
+			
 					@if(isset($proposal->job->categories->category))<h5>Category: <a href="{!! URL::to('/category/').'/'.$proposal->job->categories->slug !!}"   >{!! $proposal->job->categories->category !!}</a></h5>@endif
 					
 					<hr>
+					<h5>Freelancer Name:
+						{!! $proposal->user_profile->first_name !!}
+						<a href="{{ URL::to('/user/profile/'). '/'.$proposal->user_profile->slug }}">Freelancer Profile</a>
+						</h5>
 					<?php $images=unserialize($proposal->job->images); ?>
 					@if(!empty($images))
 					
@@ -62,20 +79,22 @@ Softral Job - View {!!  $proposal->job->project_name !!}
 					@else
 					<hr>	
 					@endif
-					<hr>
+					
+					
 					
 					{!! $proposal->proposal !!}
 					
 					@if( $proposal->job->job_type=='fixed')
 					<div class="row-fluid">
 						<h5> Amount : ${!! $proposal->main_amount !!}</h5>
-						<h5>Submitted date : {!! $proposal->created_at !!}</h5>
+						
+						<h5>Proposal Submitted date : {{ $proposal->created_at }}</h5>	
 					</div>
 					<hr>
 					@else
 					<div class="row-fluid">
 						<h5>Hour : ${!! $proposal->main_amount !!}/Hour</h5>
-						<h5>Submitted date : {!! $proposal->created_at !!}</h5>
+						<h5>Proposal Submitted date : {{ $proposal->created_at }}</h5>
 					</div>
 					<hr>
 					@endif
@@ -94,9 +113,7 @@ Softral Job - View {!!  $proposal->job->project_name !!}
 					@endif
 					<h5>Charged to Client : ${!! $proposal->client_amount !!}</h5>
 					
-					<div class="row-fluid">
-						<h5>Job ID : {!! $proposal->job->id !!}</h5>
-					</div>
+					
 					
 					
 				</div>
@@ -116,7 +133,7 @@ Softral Job - View {!!  $proposal->job->project_name !!}
 			
 			@if($proposal->offer==1 && $proposal->freelancer_counter_amount!='') 
 				<div class="row-fluid">
-				<h3>Congrats, Your offer of ${{$proposal->freelancer_counter_amount}} has been selected.</h3>
+				<h3>Congratulations, Your offer of ${{$proposal->freelancer_counter_amount}} has been selected.</h3>
 				</div>
 			@endif
            

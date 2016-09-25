@@ -51,7 +51,7 @@
 
 <tr style="line-height:0">
 <td style="line-height:0;background-color:#ffffff" width="28" height="20" bgcolor="#ffffff" valign="top"></td>
-<td style="line-height:20px;background-color:#ffffff" width="548" height="20" bgcolor="#ffffff" valign="top"><strong>Job ID: </strong> {{ $data['id'] }}</td>
+<td style="line-height:20px;background-color:#ffffff" width="548" height="20" bgcolor="#ffffff" valign="top"><strong>Job ID: </strong> #{{ $data['id'] }}</td>
 <td style="line-height:0;background-color:#ffffff" width="24" height="20" bgcolor="#ffffff" valign="top"></td>
 </tr>
 
@@ -60,11 +60,12 @@
 <td style="line-height:20px;background-color:#ffffff" width="548" height="20" bgcolor="#ffffff" valign="top"><strong>Job Title: </strong> {{ $data['project_name'] }}</td>
 <td style="line-height:0;background-color:#ffffff" width="24" height="20" bgcolor="#ffffff" valign="top"></td>
 </tr>
-<br/>
+
 
 </tbody></table><table cellpadding="0" cellspacing="0" width="600" style="line-height:0">
 <tbody>
 
+<tr style="line-height:0"><td width="28" valign="top" height="16" bgcolor="#ffffff" style="line-height:0;background-color:#ffffff"></td></tr>
 <tr style="line-height:0"><td width="28" valign="top" height="16" bgcolor="#ffffff" style="line-height:0;background-color:#ffffff"></td>
 <td style="line-height:0;background-color:#ffffff" width="548" height="29" bgcolor="#ffffff" valign="top"><p style="font-family:Helvetica,Arial,sans-serif;font-size:12px;color:#333333;margin:0;padding:0;line-height:12px;font-weight:normal;margin-bottom:0">Checkout the new job  <a href="{!! URL::to('/') !!}/job/{!!$data['slug']!!}">{!!$data['project_name']!!}</a> and <a href="{!! URL::to('/') !!}/add-proposal/{!!$data['slug']!!}">Submit the proposal</a> </p></td>
 <td style="line-height:0;background-color:#ffffff" width="24" height="26" bgcolor="#ffffff" valign="top"></td>

@@ -20,6 +20,9 @@ $groupid = $_POST['groupid'];
 $last_message = $_POST['last_message'];
 
 
+$user_prof_pic_url = $_POST['user_prof_pic_url'];
+
+
 
 
 if ($chattype == 'individual') {
@@ -34,15 +37,35 @@ if ($chattype == 'individual') {
 //                                ORDER BY id DESC LIMIT 100) sub ORDER BY id ASC";
 
 
-    $sql = $dbh->prepare("SELECT * FROM (
-                            SELECT a.id, a.sender_id, a.reciever_id, a.msg, a.msg_type, a.posted, c.avatar FROM chat_messages as a 
-                            inner join users as b on a.sender_id = b.id 
-                            inner join user_profile as c on b.id = c.user_id 
-                            where a.sender_id in('" . $_SESSION['id'] . "', '$sendto') 
-                                and a.reciever_id in('" . $_SESSION['id'] . "', '$sendto') 
-                                and a.posted > '$last_message'
-                                ORDER BY id DESC LIMIT 100) sub ORDER BY id ASC");
+    
+     /**
+     * Commenting on 19/09/2016
+     * By Sibbir Ahemd.
+     * No need to JOin since avatar is not required from database.
+     */
+    
+//    $sql = $dbh->prepare("SELECT * FROM (
+//                            SELECT a.id, a.sender_id, a.reciever_id, a.msg, a.msg_type, a.posted, c.avatar FROM chat_messages as a 
+//                            inner join users as b on a.sender_id = b.id 
+//                            inner join user_profile as c on b.id = c.user_id 
+//                            where a.sender_id in('" . $_SESSION['id'] . "', '$sendto') 
+//                                and a.reciever_id in('" . $_SESSION['id'] . "', '$sendto') 
+//                                and a.posted > '$last_message'
+//                                ORDER BY id DESC LIMIT 100) sub ORDER BY id ASC");
 
+    //a.accpeted_time > date_sub(now(), interval 15 SECOND)
+    
+
+    
+    $sql = $dbh->prepare("SELECT id, sender_id, reciever_id, msg, msg_type, posted
+                                FROM chat_messages
+                                where sender_id in('" . $_SESSION['id'] . "', '$sendto')
+                                and reciever_id in('" . $_SESSION['id'] . "', '$sendto')
+                                and posted > '$last_message'");
+
+    
+    
+    
     $sql->execute();
 
     $temp_time = "";
@@ -110,13 +133,17 @@ if ($chattype == 'individual') {
         } else {
             $class .= " friend";
 
+            
+            
+            
+            $friend_profile_pic = '<img class="thumb-prof-pic" width="35px" height="35px" src="'.$user_prof_pic_url.'" style="margin-right:5px; float:left;">';
 
 
-            $avatar = $r['avatar'];
-            if (!empty($avatar))
-                $friend_profile_pic = '<img class="thumb-prof-pic" width="35px" height="35px" src="data:image/jpeg;base64,' . base64_encode($avatar) . '" style="margin-right:5px; float:left;">';
-            else
-                $friend_profile_pic = '<img class="thumb-prof-pic" width="35px" height="35px" src="' . $websiteRoot . '/images/man.png" style="margin-right:5px; float:left;">';
+//            $avatar = $r['avatar'];
+//            if (!empty($avatar))
+//                $friend_profile_pic = '<img class="thumb-prof-pic" width="35px" height="35px" src="data:image/jpeg;base64,' . base64_encode($avatar) . '" style="margin-right:5px; float:left;">';
+//            else
+//                $friend_profile_pic = '<img class="thumb-prof-pic" width="35px" height="35px" src="' . $websiteRoot . '/images/man.png" style="margin-right:5px; float:left;">';
 
 
 //            $caret_class = '<i class="triangle-left"></i>';
@@ -308,135 +335,20 @@ if ($chattype == 'individual') {
     }
 }
 
-if (!isset($_SESSION['id']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-    echo "<script>window.location.reload()</script>";
-}
+//comment on 13/09/2016 Sibbir Ahmed
+//if (!isset($_SESSION['id']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+//    echo "<script>window.location.reload()</script>";
+//}
 ?>
 
 
 <!--Message Edit, Copy and Delete-->
-
 <!--  Contextmenu -->
-<ul id="menu" class="jeegoocontext cm_blue">
-    <!--<li id="copy-link"><a href="#copy" id="copy-link">Copy Now</a></li>-->
+<!--<ul id="menu" class="jeegoocontext cm_blue">
+    <li id="copy-link"><a href="#copy" id="copy-link">Copy Now</a></li>
     <li id="copy-link" class="js-emailcopybtn">Copy Now</li>
     <li class="js-emailcopybtn-edit">Edit</li>
     <li>Delete</li>
     <li>Paste</li> 
-</ul> 
-
-
-<script>
-    $(".me").on('mousedown', function(e){
-        if( e.button == 2 ) {
-            console.log("Right Click");
-            
-            var me = $(this);
-            $(".js-emaillink").html($(this).html());
-            $("#js-emaillink-edit").val($(me).next().val());
-        }
-    });
-    
-    
-    $(function(){
-        //        $('.context').jeegoocontext('menu');
-        $('.me').jeegoocontext('menu');
-        /*
-        $('.context').jeegoocontext('menu', {
-            data: $(this).html()
-        });
-         */
-    });
-    
-    
-    /**
-     * Copy
-     */
-    $(".js-emailcopybtn").click(function(){
-        console.log("copy");
-        $("#js-emaillink-edit").val("0");
-    });
-    
-    
-    
-    var copyEmailBtn = document.querySelector('.js-emailcopybtn');  
-    if(copyEmailBtn != null){
-        
-        
-        copyEmailBtn.addEventListener('click', function(event) {
-            
-            
-            // Select the email link anchor text  
-            var emailLink = document.querySelector('.js-emaillink');  
-            var range = document.createRange();  
-            range.selectNode(emailLink);  
-            window.getSelection().addRange(range);  
-    
-            try {  
-                // Now that we've selected the anchor text, execute the copy command  
-                var successful = document.execCommand('copy');  
-                var msg = successful ? 'successful' : 'unsuccessful';  
-                console.log('Copy email command was ' + msg);  
-            } catch(err) {  
-                console.log('Oops, unable to copy');  
-            }  
-    
-            // Remove the selections - NOTE: Should use   
-            // removeRange(range) when it is supported  
-            window.getSelection().removeAllRanges();  
-        });
-        
-        
-        /**
-         * End of section
-         * Copy
-         */
-        
-        
-        /**
-         * Edit
-         */
-        var editEmailBtn = document.querySelector('.js-emailcopybtn-edit');  
-        if(editEmailBtn != null){
-        
-        
-            editEmailBtn.addEventListener('click', function(event) {
-            
-                console.log('edited');
-            
-                // Select the email link anchor text  
-                var emailLink = document.querySelector('.js-emaillink');  
-                var range = document.createRange();  
-                range.selectNode(emailLink);  
-                window.getSelection().addRange(range);  
-                
-                
-                //                var range = document.createRange();
-                //                range.selectNode(document.getElementById('js-emaillink'));
-                //                window.getSelection().addRange(range);
-    
-                try {  
-                    // Now that we've selected the anchor text, execute the copy command  
-                    var successful = document.execCommand('copy');  
-                    var msg = successful ? 'successful' : 'unsuccessful';  
-                    console.log('Edit command was ' + msg);  
-                } catch(err) {  
-                    console.log('Oops, unable to edit');  
-                }  
-    
-                // Remove the selections - NOTE: Should use   
-                // removeRange(range) when it is supported  
-                window.getSelection().removeAllRanges();  
-            });
-    
-        }
-        
-        /**
-         * End of Section
-         * Edit
-         */
-    
-    }
-</script>
-
+</ul>-->
 <!--//Message Edit, Copy and Delete-->

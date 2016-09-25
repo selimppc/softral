@@ -1,5 +1,6 @@
  <h2>Sign Up</h2>
           <hr>
+		  {!! HTML::style('http://morganthall.com/ujo/chosen-koenpunt/chosen.css') !!}
 		  @if($errors->any())
 			<div class="alert alert-danger" style='color:black;background-color:yellow'>
 				@foreach($errors->all() as $error)
@@ -42,7 +43,7 @@
 					  <div class="col-xs-6 col-md-6 required">
 					  <i class="fa fa-asterisk"></i> 
                   <div class="form-group">
-                      <strong>Choose Profile Picture:</strong> {!! Form::file('image', ['id' =>'image', 'required']) !!}
+                      <strong>Choose Profile Picture:</strong><span class='input_image'> {!! Form::file('image', ['id' =>'image']) !!}</span>
                   </div>
 				  </div>
                   </div>
@@ -98,7 +99,7 @@
 					<i class="fa fa-asterisk"></i> 
 					<div class="form-group">
 				   <strong>Please list your five best Skill:</strong>
-                     {!! Form::select('skills[]', $skills,'skills',['class' => 'form-control','id'=>'skills','required','multiple'=>true, 'hidden'=>true]) !!}
+                     {!! Form::select('skills[]', $skills,'skills',['id'=>'skills','required','multiple'=>true, 'hidden'=>true,'class'=>'form-control chzn-select','style'=>'width:100%','data-placeholder'=>'Select a skill']) !!}
 					</div> 
 					
 
@@ -118,17 +119,26 @@
             </div>
           </div>
 		  {!! HTML::script('packages/jacopo/laravel-authentication-acl/js/vendor/jquery-1.10.2.min.js') !!}
+		  	{!! HTML::script('http://morganthall.com/ujo/chosen-koenpunt/chosen.jquery.min.js') !!}
 		  <script>			
 							$(function() {
+								 $(".chzn-select").chosen({
+				create_option: true,
+				persistent_create_option: true,
+				create_option_text: 'add',
+			});
 						$('input[name="custom_profile_1"]').on('click', function() {
 							if ($(this).val() == 'Seller') {
 								$('#textboxes').show();
 								$('#skills').prop('disabled',false);
 								$("#skills option[value='no']").remove();
+								$('#image').attr("name", 'image');
+								$('.hidden_image').remove();
 							}
 							else {
-								
 								$('#textboxes').hide();
+								$('#image').attr("name", 'image1');
+								$('.input_image').append("<input type='hidden' class='hidden_image' name='image' value='1' />");
 								$('#skills').append('<option value="no">-</option>');
 								$('#skills').append('<option value="no">-</option>');
 								$('#skills').append('<option value="no">-</option>');
@@ -153,4 +163,10 @@
 					<style type="text/css">
 .required i {position: absolute;left: 2px;top: 2px;color: #F44336;font-size:12px;}
 .required { position: relative;}
+.chzn-choices{
+	    min-height:30px;
+}
+.default{
+	    min-height:30px;
+}
 </style>

@@ -40,7 +40,7 @@ Softral - My Jobs
 		<td><strong>Posted date</strong></td>
 		<td><strong>Contract</strong></td>
 		<td><strong>Close Job</strong></td>
-		<td><strong>Fund the amount</strong></td>
+		<td><strong>Fund the Job</strong></td>
 		<td><strong>Edit</strong></td>
 		<td><strong>View</strong></td>
 		<td><strong>Delete</strong></td>
@@ -66,7 +66,7 @@ Softral - My Jobs
 				
 				@elseif(isset($my_job->contract) && $my_job->contract->ended_contract==0 && $my_job->contract->cancel_contract==0 && isset($my_job->proposal_selected->id))<a href="{!! URL::to('/financial/terms_milestone/').'?p_id='. $my_job->proposal_selected->id !!}" class="margin-left-5">View Contract</a> @endif</td>
 				
-				<td>@if($my_job->job_close==1) <a href="{!! URL::route('job.openJob', ['job-id'=>$my_job->id, '_token' => csrf_token()]) !!}" class="open_job"><font color='green'><strong>Reopen Job</strong></font></a> @else<a href="{!! URL::route('job.closeJob', ['job-id'=>$my_job->id, '_token' => csrf_token()]) !!}" class="close_job">End Contract</a>@endif</td>
+				<td>@if($my_job->job_close==1) <a href="{!! URL::route('job.openJob', ['job-id'=>$my_job->id, '_token' => csrf_token()]) !!}" class="open_job"><font color='green'><strong>Reopen Job</strong></font></a> @else<a href="{!! URL::route('job.closeJob', ['job-id'=>$my_job->id, '_token' => csrf_token()]) !!}" class="close_job">Close job</a>@endif</td>
 				<td>
 				@if(isset($my_job->proposal_selected->terms_milestone) && ($my_job->proposal_selected->terms_milestone==2)) Offer is declined
 				@elseif(isset($my_job->proposal_selected->terms_milestone) && ($my_job->proposal_selected->terms_milestone!=1)) Freelancer hasn't accepted yet.

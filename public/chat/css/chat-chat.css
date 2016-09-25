@@ -46,7 +46,8 @@
     overflow-y:auto;
     /* height:260px;*/
     /*height: 385px;*/
-    height: 393px;
+/*    height: 393px;*/
+    max-height: 393px;
     
     font-family: sans-serif;
     font-size: 13px;
@@ -268,7 +269,7 @@
 
 }
 
-.user .username{
+.pending-request .username, .user .username{
     width: 70%;
     overflow:hidden;
     display:inline-block;
@@ -307,3 +308,11 @@
 .active-user .username{
     color: #FFFFFF;
 }
+
+
+
+
+
+
+ 
+

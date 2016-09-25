@@ -773,6 +773,13 @@ class FinancialController extends Controller {
 			$escrow_has = with(new Money)->add_escrow_release($job_id,$escrow_money['proposal']['user_id'],$total_amount,$amount1,0);
 			$amount_to_softral = with(new Money)->add_escrow_release($job_id,1,$softral_amount,$amount_to_softral,$escrow_money['proposal']['user_id']);
 			
+			$release_Notification['job_id']=$input['job_id'];
+			$release_Notification['proposal_id']=$input['proposal_id'];
+            $release_Notification['label']='Released Money';
+			$release_Notification['user_id']=$escrow_money['proposal']['user_id'];
+            
+            $release_Notification = Notifications::create($release_Notification);
+			
 			$send_mail=config('app.admin_email');
 			Mail::send('emails.escrow_release', ['employee' => $logged_user,'freelancer'=>$escrow_money,'amount'=>$amount2], function($message) use ($send_mail) {
 				$message->to($send_mail, 'From Softral Job')->subject('Softral - Employee Released Payment');
@@ -829,6 +836,13 @@ class FinancialController extends Controller {
 			$money_has = with(new Money)->escrowmoney_add($job_id,$logged_user->id,'bonus',$total_amount,$amount1);
 			$escrow_has = with(new Money)->add_bonus_release($job_id,$proposal['user_id'],$total_amount_freelancer,$amount1-$freelancer_amount['freelancer_fee']);
 			$amount_to_softral = with(new Money)->add_escrow_release($job_id,1,$softral_amount,$amount_to_softral,$logged_user->id);
+			
+				$notification['label'] = 'Sent Bonus';
+                $notification['job_id'] =$input['job_id'];
+                $notification['user_id'] =$proposal['user_id'];
+                $notification['amount'] =$amount1;
+                $notification['proposal_id'] =$input['proposal_id'];
+                $notification = Notifications::create($notification);
 	
 			Session::flash('message', 'You have successfully sent bonus to freelancer. $'.$amount_to_softral.' was added to softral account as transaction fee');
 			return redirect('financial/terms_milestone?p_id='.$proposal_id);
@@ -836,6 +850,7 @@ class FinancialController extends Controller {
 	
 	public function saveTermsMilestone(Request $request){
 		$input = $request->all();
+		$logged_user = $this->auth->getLoggedUser();
 		
 		if(isset($input['accept'])):
 			$input['terms_milestone']=1;
@@ -898,13 +913,29 @@ class FinancialController extends Controller {
 			$contract->fill($input2)->save();
 			
 			$send_mail=$milestone['job']['user']['email'];
+		
+			if($milestone['user_id']==$logged_user['id']):
+				$input['label'] ='Ended the Contract';
+				$input['user_id']=$milestone['job']['user_id'];
+			else:
+				$input['label'] ='FEnded the Contract';
+				$input['user_id']=$milestone['user_id'];
+			endif;
+            
+            $input['job_id']=$milestone['job_id'];
+            $input['proposal_id']=$input['proposal_id'];
+            $endcont_notification = Notifications::create($input);
 			
 			Mail::send('emails.cancel_contract', ['proposal' => $milestone,'label'=>'Ended'], function($message) use ($send_mail) {
 				$message->to($send_mail, 'From Softral Job')->subject('Softral - End the Contract');
 			});
 			
 			Session::flash('message', 'You have successfully ended the contract.');
-			return redirect('employee_feedback?c_id='.$contract->id);	
+			if($milestone['user_id']==$logged_user['id']):
+				return redirect('freelancer_feedback?p_id='.$input['proposal_id'].'&job_id='.$milestone['job_id']);
+			else:
+				return redirect('employee_feedback?c_id='.$contract->id);
+			endif;
 		endif;
 	}
 	

@@ -12,8 +12,18 @@ if ($search_from == "softral_db") {
      */
    
     $str .= "<h4 class='online_green'>Results from Softral</h4>";
-                                
-    $sql = $dbh->prepare("SELECT a.user_id, a.first_name, a.last_name, a.avatar,
+    
+//    echo "SELECT a.user_id, a.first_name, a.last_name,
+//                            if(a.user_id = b.user_id, b.status, c.status) as request_status,
+//                            if(a.user_id = b.user_id, 'pending_request', 'sent_request') as requested_type
+//                            FROM user_profile a 
+//                            left join chat_friendlist b on a.user_id=b.user_id and b.friend_id={$_SESSION['id']}
+//                            left join chat_friendlist c on a.user_id=c.friend_id and c.user_id={$_SESSION['id']}
+//                            left join users d on d.id=a.user_id
+//                            where (a.first_name LIKE '%$search_str%' OR a.last_name LIKE '%$search_str%') AND d.activated=1 and a.user_id not in({$_SESSION['id']})";
+    
+    //$sql = $dbh->prepare("SELECT a.user_id, a.first_name, a.last_name, a.avatar,
+    $sql = $dbh->prepare("SELECT a.user_id, a.first_name, a.last_name,
                             if(a.user_id = b.user_id, b.status, c.status) as request_status,
                             if(a.user_id = b.user_id, 'pending_request', 'sent_request') as requested_type
                             FROM user_profile a 
@@ -28,14 +38,16 @@ if ($search_from == "softral_db") {
         //Check Gender
 //        $profile_pic = "<img width='35px' height='35px' style='margin-right:5px;' src='{$websiteRoot}images/man.png'>";
         
-        $profile_pic = "";
-        $avatar = $r['avatar'];
-        if (!empty($avatar))
-            $profile_pic = '<img class="thumb-prof-pic" width="35px" height="35px" style="margin-right:5px;" src="data:image/jpeg;base64,' . base64_encode($avatar) . '"/>';
-        else {
-            // TODO@ Check Gender for default Profile Picture
-            $profile_pic = "<img class='thumb-prof-pic' width='35px' height='35px' style='margin-right:5px;' src='{$websiteRoot}images/man.png'>";
-        }
+        $profile_pic = "<img class='thumb-prof-pic' width='35px' height='35px' style='margin-right:5px;' src='{$websiteRoot}images/man.png'>";
+        
+//        $profile_pic = "";
+//        $avatar = $r['avatar'];
+//        if (!empty($avatar))
+//            $profile_pic = '<img class="thumb-prof-pic" width="35px" height="35px" style="margin-right:5px;" src="data:image/jpeg;base64,' . base64_encode($avatar) . '"/>';
+//        else {
+//            // TODO@ Check Gender for default Profile Picture
+//            $profile_pic = "<img class='thumb-prof-pic' width='35px' height='35px' style='margin-right:5px;' src='{$websiteRoot}images/man.png'>";
+//        }
         
             
         $str .= "<div class='netnoor-user' id='netnoor-user-{$r['user_id']}'>$profile_pic 

@@ -61,7 +61,7 @@ Softral Job - {!! $proposal->job->project_name !!} - Terms and Condition
 					 <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-12">
-                         <h3 class="panel-title bariol-thin" style='font-size:26px'>{!! $proposal->job->project_name !!}</h3>
+                         <h3 class="panel-title bariol-thin" style='font-size:26px'>{!! $proposal->job->project_name !!} <span style='font-size:15px'> Job ID :{!! $proposal->job->id !!}</span></h3>
                     </div>
                 </div>
             </div>    
@@ -122,9 +122,6 @@ Softral Job - {!! $proposal->job->project_name !!} - Terms and Condition
 									<div class='pull-right' style='padding-right: 24px;'><h5>Amount in Escrow: <strong>${!! $escrow_money !!}</strong></h5></div>
 							@endif
 							@if(isset($proposal->contract) && $proposal->contract->ended_contract==0 && $proposal->contract->cancel_contract==0)
-							<div class='pull-right' >	<h5>
-							<a href="{!! URL::to('financial/cancel_contract').'?p_id='.$proposal->id !!}" class='cancel_job'>Cancel the job</a>
-							</h5></div>
 							<div class='pull-right' style='padding-right: 24px;'><h5>Amount in Escrow: <strong>${!! $escrow_money !!}</strong></h5></div>
 							@endif
 						</div>
@@ -136,7 +133,7 @@ Softral Job - {!! $proposal->job->project_name !!} - Terms and Condition
                 <thead>
 
                   <tr>
-				  <th colspan="1">Client</th>
+				  <th colspan="1">Employer</th>
 				  <th colspan="1">Job start date</th>
 				  <th colspan="1">Total amount</th>
 				  </tr>
@@ -262,21 +259,12 @@ Softral Job - {!! $proposal->job->project_name !!} - Terms and Condition
 				</div>
 					<hr class='margin_top_hr'>
 					@if(isset($proposal->contract) && $proposal->contract->terms_condition=='')
-					<p>Once the freelancer completes the work and requests payment for a milestone, the client has 15 days to review the work and release funds from escrow.
+					<p>Once the freelancer completes the work and requests payment for a milestone, the employer has 15 days to review the work and release funds from escrow.
 
-Alternatively, the client can adjust the terms of the job or file a dispute. If no action is taken by day 30, funds held in escrow are released to the freelancer.</p>
+Alternatively, the employer can adjust the terms of the job or file a dispute. If no action is taken by day 30, funds held in escrow are released to the freelancer.</p>
                     @else
 					<p>{!!$proposal->contract->terms_condition!!}</p>
 					@endif
-					
-					@if(isset($proposal->contract) && $proposal->contract->ended_contract==0 && $proposal->contract->cancel_contract==0  && $proposal->terms_milestone!=2)
-					@if( $proposal->terms_milestone==1 && $user_id==$proposal->user_id)
-							
-					@else
-					<a href="javascript:void(0)" id="edit_terms" class='btn btn-primary'>Edit Terms</a>
-					<br/><br/>
-				    @endif
-				    @endif
 					
 			<!--<div class='row'>
 						<div class='col-md-12'>
@@ -346,8 +334,17 @@ Alternatively, the client can adjust the terms of the job or file a dispute. If 
 								<div class='pull-left'><h5><strong>Do you accept the terms & milestones?</strong></h5></div>
 							</div>
 							<div class='col-md-12'>
-								<div class='pull-left'><h5><input type="submit"  class="btn btn-success" name="accept" value="Accept" /> <input type="submit"  class="btn btn-danger declined_offer" name="accept" value="Decline offer" /></h5></div>
+								<div class='pull-left'><h5><input type="submit"  class="btn btn-success" name="accept" value="Accept" /> <input type="submit"  class="btn btn-danger declined_offer" name="accept" value="Decline offer" />
+								@if(isset($proposal->contract) && $proposal->contract->ended_contract==0 && $proposal->contract->cancel_contract==0  && $proposal->terms_milestone!=2)
+									@if( $proposal->terms_milestone==1 && $user_id==$proposal->user_id)
+								
+									@else
+										<a href="javascript:void(0)" id="edit_terms" class='btn btn-primary'>Edit Terms</a>
+									@endif
+								@endif
+								</h5></div>
 							</div>
+								
 						</div>
 					@elseif($proposal->terms_milestone==2)
 						<div class='row'>
@@ -387,8 +384,12 @@ Alternatively, the client can adjust the terms of the job or file a dispute. If 
 									<div class='pull-left'><h5><strong>Do you accept new terms & milestones?</strong></h5></div>
 								</div>
 								<div class='col-md-12'>
-									<div class='pull-left'><h5><input type="submit"  class="btn btn-success" name="accept" value="Accept" /> <input type="submit"  class="btn btn-danger" name="accept" value="No" /></h5></div>
+									<div class='pull-left'><h5><input type="submit"  class="btn btn-success" name="accept" value="Accept" /> <input type="submit"  class="btn btn-danger" name="accept" value="No" /></h5>
+									
+									</div>
 								</div>
+								
+								@if($proposal->job->job_close==1) <a href="{!! URL::route('job.openJob', ['job-id'=>$proposal->job->id, '_token' => csrf_token()]) !!}" class="open_job"><font color='green'><strong>Reopen Job</strong></font></a> @else<a href="{!! URL::route('job.closeJob', ['job-id'=>$proposal->job->id, '_token' => csrf_token()]) !!}" class="close_job">Cancel job</a>@endif
 							</div>
 							</form>
 							
@@ -399,10 +400,9 @@ Alternatively, the client can adjust the terms of the job or file a dispute. If 
 							<div class='col-md-12' style='background-color: yellow;border: 1px solid black;'>
 								<div class='pull-left'><h5><strong>Freelancer hasn't accepted terms and milestone yet.</strong></h5></div>
 							</div>
-						</div>
-						
+						</div><br/>
 						@endif
-			
+					
 					@elseif(($proposal->terms_milestone==2))
 						<div class='row'>
 							<div class='col-md-12' style='background-color: red;color:white;border: 1px solid black;'>
@@ -416,6 +416,7 @@ Alternatively, the client can adjust the terms of the job or file a dispute. If 
 							</div>
 					</div>
 				    @endif	
+			
 				@endif
 				
 				@if($user_id==$proposal->job->user_id && $proposal->terms_milestone==1)
@@ -423,7 +424,18 @@ Alternatively, the client can adjust the terms of the job or file a dispute. If 
 					<input type='hidden' name='proposal_id' value='{!! $proposal->id !!}' />	
 					<div class='row'>
 						<div class='col-md-12'>
-								<div class='pull-left'><h5><input type="submit"  class="btn btn-success end_contract" name="end"  value="End the contract" /></h5></div>
+								<div class='pull-left'><h5><input type="submit"  class="btn btn-success end_contract" name="end"  value="End the contract" />
+								@if(isset($proposal->contract) && $proposal->contract->ended_contract==0 && $proposal->contract->cancel_contract==0  && $proposal->terms_milestone!=2)
+										@if( $proposal->terms_milestone==1 && $user_id==$proposal->user_id)
+									
+										@else
+											<a href="javascript:void(0)" id="edit_terms" class='btn btn-primary'>Edit Terms</a>
+										@endif
+								@endif
+								@if(isset($proposal->contract) && $proposal->contract->ended_contract==0 && $proposal->contract->cancel_contract==0)
+									<a href="{!! URL::to('financial/cancel_contract').'?p_id='.$proposal->id !!}" class='cancel_job'>Cancel the job</a>
+								@endif
+								</h5></div>
 						</div>
 					</div>
 					</form>
@@ -924,6 +936,10 @@ Alternatively, the client can adjust the terms of the job or file a dispute. If 
 		
 		$("#add_release_escrow").click(function(){
            $('#modal_release_fund_escrow').modal('show');
+        });
+		
+		$(".close_job").click(function(){
+            return confirm("Are you sure to close this job?");
         });
 		
 		$("#edit_terms").click(function(){

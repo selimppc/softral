@@ -2,7 +2,9 @@
  * Select user from My contact list to start aconversation
  * and to see the previous conversation
  */
-$(".user").on("click", function(){
+//$(".user").on("click", function(){
+$("#recent-user, #all-user").delegate(".user", "click", function(){    //13/06/2016
+    
         
     $('.user').removeClass('active-user'); // Just remove class from all user
     $(this).addClass("active-user");
@@ -38,7 +40,7 @@ $(".user").on("click", function(){
     $("#chattype").val('individual');   //If indiviadaul user is selected to chat
         
         
-    $("#sendto").val(($(this).find("label").text()));
+    $("#sendto").val(($(this).find("label.userid").text()));
     $("#groupid").val("");
         
         
@@ -46,29 +48,12 @@ $(".user").on("click", function(){
 });
     
     
-    
+
 /**
  * End of Section
  * Select user from My contact list to start aconversation
  * and to see the previous conversation
  */
-
-
-/**
-* Set no of Pending request
-*/
-var no_of_pending_request = "<?php echo $no_of_pending_request ?>";
-        
-        
-        
-if(no_of_pending_request > 0){    
-    $("#no-of-pending-request").removeClass("hide");
-    $("#no-of-pending-request").html(" <img height='20' wdith='20' src='<?php echo $websiteRoot ?>images/Profile_AddFriend-24.png'><sup style='color:red'><?php echo $no_of_pending_request; ?></sup>");
-}else{
-    $("#no-of-pending-request").html("");
-    $("#no-of-pending-request").addClass("hide");
-}
-    
     
 
     
@@ -182,9 +167,14 @@ $(".user, .group").on("click", function(){
     
     
 /**
-     * Select user to accept/reject pending friend Request
-     */
+ * Select user to accept/reject pending friend Request
+ */
 $(".pending-request").on("click", function(){
+    
+    $('.pending-request').removeClass('active-user'); // Just remove class from all pending-request
+    $(this).addClass("active-user");
+    
+    
     $("#friend-request").removeClass("hide");
     $(".request").addClass("hide");
     $("#reponse-friend-request").removeClass("hide");
@@ -199,4 +189,6 @@ $(".pending-request").on("click", function(){
      * End ofo Section
      * Select user to accept/reject pending friend Request
      */
+
+
 

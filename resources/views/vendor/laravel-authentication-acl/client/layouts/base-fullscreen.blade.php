@@ -79,14 +79,14 @@ $(document).ready(function() {
         <span class="pull-right" style='padding: 14px 27px 3px 4px;'>
 		<div class="dropdown parent">
 		@if(!empty($logged_user))
-  <a id="dLabel" class="notify" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+  <a id="dLabel" class="notify" role="button" data-toggle="dropdown" data-target="#" href="#">
  
     <i class="glyphicon glyphicon-bell" id="notification"><span class=" notif badge badge-notify" id="noti">@if(isset($notif) && $notif!=0){{$notif}} @endif</span></i>
   </a>
 
   <ul class="dropdown-menu notifications"  role="menu" aria-labelledby="dLabel">
     
-    <div class="notification-heading"><h4 class="menu-title">Notifications</h4>
+     <div class="notification-heading"><h4 class="menu-title">@if(isset($notif) && $notif!=0) {{$notif}} new notifications @else No new notification @endif</h4>
     </div>
  
    <div class="notifications-wrapper">
@@ -97,14 +97,19 @@ $(document).ready(function() {
 		  @if(isset($notification->job->project_name))	
 			@if($notification->label=='got proposal')
 				<a class="" href="{!!URL::to('/job/proposal_view?id='.$notification->proposal_id ) !!}">
-				@elseif($notification->label=='select proposal' || $notification->label=='Escrow money')<a class="content" href="{!! URL::to ('financial/terms_milestone?p_id='.$notification->proposal_id) !!}">
+				@elseif($notification->label=='select proposal' || $notification->label=='Escrow money' || $notification->label=='Ended the Contract' || $notification->label=='Sent Bonus' || $notification->label=='Released Money' || $notification->label=='FEnded the Contract')<a class="content" href="{!! URL::to ('financial/terms_milestone?p_id='.$notification->proposal_id) !!}">
 			@endif
 	
 	<div class="notification-item">
        <p class="item-info">
-	   @if($notification->label=='got proposal') You have got proposal @endif
-	   @if($notification->label=='select proposal') Your proposal has been selected @endif
-	   @if($notification->label=='Escrow money')  {{ $notification->job->user->user_profile[0]->first_name}} has Escowed ${{ $notification->amount }} @endif for job {{ $notification->job->project_name}}</p>
+	   @if($notification->label=='got proposal') You have got proposal
+	   @elseif($notification->label=='select proposal') Your proposal has been selected 
+	   @elseif($notification->label=='Escrow money')  {{ $notification->job->user->user_profile[0]->first_name}} has Escowed ${{ $notification->amount }} 
+	   @elseif($notification->label=='Ended the Contract') {{ $notification->proposal->user->user_profile[0]->first_name}} has Ended the Contract 
+	   @elseif($notification->label=='FEnded the Contract') {{ $notification->job->user->user_profile[0]->first_name}} has Ended the Contract 
+	   @elseif($notification->label=='Sent Bonus') {{ $notification->job->user->user_profile[0]->first_name}} has sent bonus ${{ $notification->amount }}
+	   @elseif($notification->label=='Released Money') {{ $notification->job->user->user_profile[0]->first_name}} has released money @endif
+	   for job {{ $notification->job->project_name}}</p>
 		</div>
     </a>
 		   @endif	
@@ -116,7 +121,7 @@ $(document).ready(function() {
    </div>
   
     <li class="divider"></li>
-    <div class="notification-footer"><h4 class="menu-title"> <a href="{!! URL::to('job/notification') !!}">View all<i class="glyphicon glyphicon-circle-arrow-right"></i></a></h4></div>
+    <div class="notification-footer"><h4 class="menu-title"> <a href="{!! URL::to('job/notification') !!}">See all<i class="glyphicon glyphicon-circle-arrow-right"></i></a></h4></div>
   </ul>
  @endif
 </div>
@@ -137,7 +142,8 @@ $(document).ready(function() {
 	   <li>{!! link_to_route('welcome.saveUsers','Save Users') !!}</li> 
 	 @if(!isset($logged_user) || (isset($logged_user->user_profile[0]->profile_field_type->value) && ($logged_user->user_profile[0]->profile_field_type->value=='Buyer' || $logged_user->user_profile[0]->profile_field_type->value=='Both')))
 		<li>{!! link_to_route('welcome.myJobs','My Jobs') !!}</li> 
-		<li>{!! link_to_route('welcome.myContracts','My Contracts') !!}</li> 
+		<li>{!! link_to_route('welcome.myContracts','Escrow Contracts') !!}</li> 
+		<li>{!! link_to_route('welcome.user_Agreement','User Agreements') !!}</li> 
 	  @endif
 	  
 	   <li>{!! link_to_route('financial','My Financial Accounts') !!}</li> 
@@ -197,11 +203,9 @@ $(document).ready(function() {
                              <li><a href="{!! URL::to('/').'/chat/index.php' !!}">Chat</a></li>
 								<li @if('http://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']==url('all-members')) class="active" @endif>{!! link_to_route('user.members','Members') !!}</li>
 							
-							 @if(!isset($logged_user) || (isset($logged_user->user_profile[0]->profile_field_type->value) && ($logged_user->user_profile[0]->profile_field_type->value=='Buyer' || $logged_user->user_profile[0]->profile_field_type->value=='Both')))
-								<li @if('http://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']==url('my_contracts')) class="active" @endif>{!! link_to_route('welcome.myContracts','Contracts') !!}</li>
-							@else
-								<li @if('http://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']==url('my_runningjobs')) class="active" @endif>{!! link_to_route('welcome.runningJobs','Contracts') !!}</li>
-							@endif
+							
+								<li @if('http://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']==url('pages/rules-conditions')) class="active" @endif><a href="{!! URL::to('/').'/pages/rules-conditions' !!}">Terms & Conditions</a></li>
+							
 							<li @if('http://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']==url('pages/privacy-policy')) class="active" @endif><a href="{!! URL::to('/').'/pages/privacy-policy' !!}">Privacy Policy</a></li>
 							<li @if('http://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']==url('pages/contact-us')) class="active" @endif><a href="{!! URL::to('/').'/pages/contact-us' !!}">Contact us</a></li>			
                       	</ul>

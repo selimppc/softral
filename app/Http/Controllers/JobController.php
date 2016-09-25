@@ -200,7 +200,7 @@ class JobController extends Controller {
 		foreach(array_unique($email) as $key=>$em):
 			$mail=$em;
 			Mail::send('emails.notification_of_new_job', ['user'=>$name[$key],'data' => $input], function($message) use ($mail) {
-					$message->to($mail, 'From Softral Job')->subject('Softral - Got Proposal');
+					$message->to($mail, 'From Softral Job')->subject('Softral - New job notification');
 				});
 		endforeach;
 		
@@ -502,7 +502,7 @@ class JobController extends Controller {
 				$notification = Notifications::create($notification);
 		
 		Mail::send('emails.select_proposal', ['proposal'=>$proposal_detail], function($message) use ($proposal_detail) {
-			$message->to($proposal_detail->user->email, 'From Softral Job')->subject('Softral - Congrats, Your proposal has been selected');
+			$message->to($proposal_detail->user->email, 'From Softral Job')->subject('Softral - Proposal selected');
 		});
 			Session::flash('message', 'You have successfully Selected the freelancer for your job.Please add Milstones now.');
 			
