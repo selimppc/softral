@@ -57,6 +57,8 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
+		exit("OK");
+
 		$about = Page::where('slug','home-page-content')->first();
 		$hexa_gonal_background = Page::where('id',21)->first();
 		$logged_user = $this->auth->getLoggedUser();
