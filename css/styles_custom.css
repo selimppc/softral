@@ -69,6 +69,9 @@ sub,sup { color:#707070; }
 .bg_red_dark { background: #992233 !important;}
 .bg_white { background: white !important;}
 .bg_trans_white { background: rgba(255,255,255,0.3) !important;}
+.bg_trans_white_90 { background: rgba(255,255,255,0.90) !important;}
+.bg_trans_white_85 { background: rgba(255,255,255,0.85) !important;}
+.bg_trans_white_80 { background: rgba(255,255,255,0.8) !important;}
 .bg_trans_white_70 { background: rgba(255,255,255,0.7) !important;}
 .bg_trans_white_60 { background: rgba(255,255,255,0.6) !important;}
 .bg_trans_white_50 { background: rgba(255,255,255,0.5) !important;}
@@ -102,12 +105,15 @@ sub,sup { color:#707070; }
 .padding-10-15 { padding: 10px 15px !important;}
 .padding-15-25 { padding: 15px 25px !important;}
 .padding-10-7 { padding: 10px 7px !important;}
+.padding-10-10 { padding: 10px 10px !important;}
 
 .width_full { width: 100% !important;}
 
 .inpt_border { border: 1px solid #d0d0d0 !important;}
 
 .no-margin { margin: 0 !important;}
+.margin_top_15 { margin-top: 15px !important;}
+.margin_top_10 { margin-top: 10px !important;}
 .margin_bottom_10 { margin-bottom: 10px !important;}
 .margin_bottom_15 { margin-bottom: 15px !important;}
 .margin_bottom_20 { margin-bottom: 20px !important;}
@@ -178,8 +184,8 @@ sub,sup { color:#707070; }
 /*Header*/
 header { width: 100%; height: auto; padding: 1% 0 0 0; background: #fff; border-bottom: 0px solid #000; margin: 0px;}
     .h_left { /*float: left; width: 33%; height: auto;*/}
-        .logo { font-size: 50px; line-height: 60px; height: 60px; width:275px; border: 0px solid #000; color: #000; text-transform: uppercase; font-weight: bold; font-family: Tahomabd; position: relative; }
-        .logo sub { font-size:15px; padding-left:5px; color:#d73739; position:absolute; bottom:16px; right:0; }
+        .logo { font-size: 50px; line-height: 60px; height: 60px; width:280px; border: 0px solid #000; color: #000; text-transform: uppercase; font-weight: bold; font-family: Tahomabd; position: relative; }
+        .logo sub { font-size:15px; font-family: Tahomabd; padding-left:5px; color:#d73739; position:absolute; bottom:16px; right:0; }
 
     .h_right { /*float: left; width: 66%; height: auto;*/ border: 0px solid #000; margin-top:0.8vw;}
         .src_form { width: auto; display: inline-block; border: 1px solid #e0e0e0; padding:2px; }
@@ -232,6 +238,9 @@ header { width: 100%; height: auto; padding: 1% 0 0 0; background: #fff; border-
 .bottom_box { margin: 4% auto;}
 .box1 { border: 2px solid #992233; width: 95%; height: auto; margin: 20px auto; border-radius: 3px; background: #fff; transition: ease-in-out 0.3s; opacity: 0.9; }
 .box1:hover { /*transform: rotate(4deg);*/ cursor: pointer; box-shadow: 0 2px 5px #000;}
+
+/* For Modal Background */
+.modal-backdrop { background-color:black/*#d73739*/; opacity: 0.90 !important; transition: ease-in-out 0.3s; }
 
 /* For Hexagon*/
 .honeycombs{display:none;}

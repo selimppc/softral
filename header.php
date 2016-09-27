@@ -143,7 +143,7 @@
                                     </ul>
                                 </li>
                                 <!--<li><a href="#"><span class=""></span> My Softral</a></li>-->
-                                <li><a href="#" class="sign" data-toggle="modal" data-target="#exampleModal">Login</a></li>
+                                <li><a href="#" class="sign" data-toggle="modal" data-target="#loginModal">Login</a></li>
                                 <li><a href="#" class="sign_1">Sign Up</a></li>
                             </ul>
                         </div>
@@ -154,39 +154,42 @@
     </section>
 </header>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content padding-3-3-prcnt bg_trans_white_70">
+<div class="modal fade bs-example-modal-sm" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content padding-3-3-prcnt bg_trans_white_90" style="margin-top: 35%;">
             <div class="modal-header no-border text-center uppercase">
                 <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
                 <h4 class="modal-title tahomabd size-25 black" id="exampleModalLabel"> Softral </h4>
             </div>
             <div class="modal-body moskNormal400">
                 <form>
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <h4 class="black">Login</h4>
-                    </div>
+                    </div>-->
                     <div class="form-group">
-                        <input type="text" class="width_full padding-15-10 black " id="user_name" placeholder="username" autofocus="autofocus">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="width_full padding-15-10 black " id="user_password" placeholder="password">
+                        <input type="text" class=" form-control width_full padding-10-7 black inpt_border " style="background: #ffffff !important; margin-bottom: 3px;" id="user_name" placeholder="username" autofocus="autofocus">
+                    <!--</div>
+                    <div class="form-group">-->
+                        <input type="password" class="form-control width_full padding-10-7 black inpt_border " id="user_password" placeholder="password">
                     </div>
                     <div class="form-group">
                         <div class="checkbox pull-left">
                             <label><input type="checkbox" id="remember" name="remember" class="black" checked >Remember me</label>
                         </div>
-                        <button type="button" class="btn btn-danger padding-15-25 pull-right">Login</button>
+                        <button type="submit" class="btn btn-danger padding-10-10 btn-block">Login</button>
+                        <p class="text-center no-margin margin_top_15 size-12"><a href="#">Having trouble logging in?</a><br>Not a member? <a href="#">Join now</a></p>
                     </div>
                 </form>
             </div>
+            <!--<div class="clearfix"></div>
             <div class="modal-footer no-border">
-                <!--<div class="checkbox pull-left">
+                <div class="checkbox pull-left">
                     <label><input type="checkbox" name="optradio" checked >Remember me</label>
                 </div>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-danger padding-15-10">Login</button>-->
-            </div>
+                <button type="button" class="btn btn-danger padding-15-10">Login</button>
+                <p>Not a member? <a href="#">Join now</a></p>
+            </div>-->
         </div>
     </div>
 </div>
@@ -199,8 +202,9 @@
     })
 </script>-->
 <script>
-    $('#exampleModal').on('shown.bs.modal', function () {
+    $('#loginModal').on('shown.bs.modal', function () {
         $('#user_name').focus();
     })
+
 </script>
 
