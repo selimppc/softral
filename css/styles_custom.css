@@ -207,11 +207,11 @@ header { width: 100%; height: auto; padding: 1% 0 0 0; background: #fff; border-
     .h_full { width: 100%; height: auto; margin: 0px;}
         nav {}
         /*menu*/
-        ul.navbar-nav li a { background: #000 !important; padding: 15px 15px 8px 15px; border-bottom: 8px solid #000; font-family: moskNormal400 }
-        ul.navbar-nav li.active a { background: #000 !important; padding: 15px 15px 8px 15px; border-bottom: 8px solid #d73739; }
+        ul.navbar-nav li a { background: #000 !important; /*padding: 15px 15px 8px 15px;*/ border-bottom: 4px solid #000; border-top: 4px transparent; font-family: moskNormal400 }
+        ul.navbar-nav li.active a { background: #000 !important; /*padding: 15px 15px 8px 15px;*/ border-bottom: 4px solid #d73739; border-top: 4px transparent; }
         /*ul.navbar-nav li.dropdown a.active { background: #000 !important; padding: 15px 15px 8px 15px; border-bottom: 8px solid #d73739; }*/
         /*sub-menu*/
-        ul.navbar-nav li ul.dropdown-menu {background: rgba(150,25,30,0.9) /*linear-gradient(0deg,rgba(150,25,30,0.9),rgba(00,00,00,0.9))*/ !important; padding:5px 0; margin:0;}
+        ul.navbar-nav li ul.dropdown-menu {background: rgba(150,25,30,0.8) /*linear-gradient(0deg,rgba(150,25,30,0.9),rgba(00,00,00,0.9))*/ !important; padding:5px 0; margin:0;}
         ul.navbar-nav li ul.dropdown-menu li a { background: inherit /*rgba(150,22,33,0.7)*/ !important; padding: 2px 15px; border-bottom: 0px solid #000; color: #fff; font-size:  12px; font-style:italic; }
         ul.navbar-nav li ul.dropdown-menu li a:hover { background: rgba(22,22,33,0.7) !important; padding: 2px 15px; border-bottom: 0px solid #000; font-size: 12px; }
 

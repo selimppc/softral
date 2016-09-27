@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="slick/slick.css">
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
     <!--=== Other CSS ===-->
-    <!--<link rel="stylesheet" href="css/style.css" type="text/css">-->
+    <!--<link media="all" rel="stylesheet" href="css/font-awesome.min.css" type="text/css">-->
     <link rel="stylesheet" href="css/styles_custom.css" type="text/css">
     <link media="all" type="text/css" rel="stylesheet" href="css/haxagon.css">
     <link media="all" type="text/css" rel="stylesheet" href="css/homeycombs.css">
@@ -153,7 +153,7 @@
         </div>
     </section>
 </header>
-
+<!--=== Modal Div Start =======================-->
 <div class="modal fade bs-example-modal-sm" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content padding-3-3-prcnt bg_trans_white_90" style="margin-top: 35%;">
@@ -195,12 +195,6 @@
 </div>
 
 <!--=== Modal Js ===-->
-<!--<script>
-    $(document).ready(function(){
-        $('#loginModal').hide();
-        $('#loginModal').modal('show')
-    })
-</script>-->
 <script>
     $('#loginModal').on('shown.bs.modal', function () {
         $('#user_name').focus();
