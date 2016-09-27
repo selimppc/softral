@@ -54,8 +54,8 @@
     </script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>-->
     <![endif]-->
     <script type="text/javascript">
         $(document).ready(function() {
@@ -147,7 +147,7 @@
                                     </ul>
                                 </li>
                                 <!--<li><a href="#"><span class=""></span> My Softral</a></li>-->
-                                <li><a href="#" class="sign">Login</a></li>
+                                <li><a href="#login" class="sign">Login</a></li>
                                 <li><a href="#" class="sign_1">Sign Up</a></li>
                             </ul>
                         </div>
@@ -157,3 +157,31 @@
         </div>
     </section>
 </header>
+<!-- Large modal -->
+<!--<div id="login" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            sldkjfklsjdf
+        </div>
+    </div>
+</div>-->
+<div id="login" class="modal fade" tabindex="" role="dialog" style="display: none !important;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" title="click x button for close this entry form">×</button>
+                <h4 class="modal-title" id="myModalLabel">Title</h4>
+            </div>
+            <div class="modal-body">
+                Model Body
+
+            </div> <!-- / .modal-body -->
+        </div> <!-- / .modal-content -->
+    </div> <!-- / .modal-dialog -->
+</div>
+<script>
+    $(document).ready(function(){
+
+        $('#login').modal('show')
+    })
+</script>
