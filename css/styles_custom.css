@@ -219,7 +219,7 @@ header { width: 100%; height: auto; padding: 1% 0 0 0; background: #fff; border-
 .box1:hover { /*transform: rotate(4deg);*/ cursor: pointer; box-shadow: 0 2px 5px #000;}
 
 /* For Hexagon*/
-/*.hex {
+.hex {
     float: left;
     margin-left: 3px;
     margin-bottom: -26px;
@@ -246,14 +246,14 @@ header { width: 100%; height: auto; padding: 1% 0 0 0; background: #fff; border-
 }
 .hex-row.even {
     margin-left: 53px;
-}*/
+}
 
-.hexagon {
+/*.hexagon {
     position: relative;
     overflow: hidden;
     background:transparent;
-    /* add slash at the end of line to see the rhombus *
-    outline: solid 1px red;/**/
+    !* add slash at the end of line to see the rhombus *
+    outline: solid 1px red;!**!
     width: 10em; height: 10em;
     transform: rotate(-30deg) skewX(30deg) scaleY(.866);
     float: left; margin-right: 10px; margin-bottom: 10px;
@@ -264,7 +264,7 @@ header { width: 100%; height: auto; padding: 1% 0 0 0; background: #fff; border-
     transform: scaleY(1.155) skewX(-30deg) rotate(30deg);
     background: linear-gradient(to bottom, #7d7e7d 0%,#0e0e0e 100%);
     content: '';
-}
+}*/
 
 /*For Slider*/
 * { box-sizing: border-box;}

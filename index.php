@@ -77,16 +77,68 @@
 
                         <div class="h_space_20"></div>
 
-                        <div class="tree">
+                        <div class="tree text-center">
                           <!--<div>
                               <div class="demo_tree"> Tree Will be placed here</div>
                           </div>-->
-                            <div class="hexagon"></div>
-                            <div class="clearfix"></div>
-                            <div class="hexagon"></div>
-                            <div class="hexagon"></div>
-                            <div class="hexagon"></div>
-                            <div class="clearfix"></div>
+
+                            <!--<div class="hex">
+                                <div class="top"></div>
+                                <div class="middle"></div>
+                                <div class="bottom"></div>
+                            </div>
+                            <div class="hex">
+                                <div class="top"></div>
+                                <div class="middle"></div>
+                                <div class="bottom"></div>
+                            </div>
+                            <div class="hex">
+                                <div class="top"></div>
+                                <div class="middle"></div>
+                                <div class="bottom"></div>
+                            </div>
+                            <div class="hex">
+                                <div class="top"></div>
+                                <div class="middle"></div>
+                                <div class="bottom"></div>
+                            </div>-->
+                            <div class="hex-row even">
+                                <div class="hex">
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
+                            </div>
+                            <div class="hex-row">
+                                <div class="hex">
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
+                                <div class="hex">
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
+                            </div>
+                            <div class="hex-row even">
+                                <div class="hex">
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
+                                <div class="hex">
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
+                                <div class="hex">
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
