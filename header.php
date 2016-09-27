@@ -9,7 +9,10 @@
     <!--=== Bootstrap CSS ===-->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
-
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css" type="text/css">
+    <!--=== Slider CSS ===-->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
     <!--=== Other CSS ===-->
     <!--<link rel="stylesheet" href="css/style.css" type="text/css">-->
     <link rel="stylesheet" href="css/styles_custom.css" type="text/css">
@@ -19,21 +22,15 @@
 
     <!--=== Jquery Scripts ===-->
     <!--<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>-->
-    <script src="js/jquery.min.js" type="text/javascript"></script>
-
+    <!--<script src="js/jquery.min.js" type="text/javascript"></script>-->
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
     <!--=== Other Scripts ===-->
     <script src="js/video.js" type="text/javascript"></script>
     <script src="js/jquery.homeycombs.js"></script>
-
     <!--=== Bootstrap Scripts ===-->
-    <script src="bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <!--<script src="bootstrap/js/bootstrap.js" type="text/javascript"></script>-->
     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <!--=== Slider CSS ===-->
-    <link rel="stylesheet" type="text/css" href="slick/slick.css">
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
-
+    <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
     <!--=== Slider Js ===-->
     <script src="slick/slick.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
@@ -57,14 +54,14 @@
     <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>-->
     <![endif]-->
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
         $(document).ready(function() {
             $('.honeycombs').honeycombs({
                 combWidth: 250,
                 margin: 10
             });
         });
-    </script>
+    </script>-->
 </head>
 <body>
 <header>
@@ -146,7 +143,7 @@
                                     </ul>
                                 </li>
                                 <!--<li><a href="#"><span class=""></span> My Softral</a></li>-->
-                                <li><a href="#login" class="sign">Login</a></li>
+                                <li><a href="#" class="sign" data-toggle="modal" data-target="#exampleModal">Login</a></li>
                                 <li><a href="#" class="sign_1">Sign Up</a></li>
                             </ul>
                         </div>
@@ -156,30 +153,54 @@
         </div>
     </section>
 </header>
-<!-- Large modal -->
-<!--<div id="loginModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            sldkjfklsjdf
-        </div>
-    </div>
-</div>-->
-<!--<div id="loginModal" class="modal fade" tabindex="" role="dialog" style="display: none !important;">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" title="click x button for close this entry form">×</button>
-                <h4 class="modal-title" id="myModalLabel">Login</h4>
-            </div>
-            <div class="modal-body">
-                Model Body
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content padding-3-3-prcnt bg_trans_white_70">
+            <div class="modal-header no-border text-center uppercase">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <h4 class="modal-title tahomabd size-25 black" id="exampleModalLabel"> Softral </h4>
+            </div>
+            <div class="modal-body moskNormal400">
+                <form>
+                    <div class="form-group">
+                        <h4 class="black">Login</h4>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="width_full padding-15-10 black " id="user_name" placeholder="username" autofocus="autofocus">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="width_full padding-15-10 black " id="user_password" placeholder="password">
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox pull-left">
+                            <label><input type="checkbox" id="remember" name="remember" class="black" checked >Remember me</label>
+                        </div>
+                        <button type="button" class="btn btn-danger padding-15-25 pull-right">Login</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer no-border">
+                <!--<div class="checkbox pull-left">
+                    <label><input type="checkbox" name="optradio" checked >Remember me</label>
+                </div>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger padding-15-10">Login</button>-->
             </div>
         </div>
     </div>
-</div>-->
-<script>
+</div>
+
+<!--=== Modal Js ===-->
+<!--<script>
     $(document).ready(function(){
-        $('#myModal').modal('show')
+        $('#loginModal').hide();
+        $('#loginModal').modal('show')
+    })
+</script>-->
+<script>
+    $('#exampleModal').on('shown.bs.modal', function () {
+        $('#user_name').focus();
     })
 </script>
+

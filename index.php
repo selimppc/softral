@@ -1,6 +1,14 @@
     <!-- Header-->
     <?php include('header.php'); ?>
-
+    <?php
+    //$arr = array();
+    //for($i=1000;$i<=1400;$i+200){
+    //for($i=10;$i<=14;$i+2){
+        //echo $i.'<br>';
+        //$arr[] = $i;
+    //}
+    //echo count($arr);
+    ?>
     <!-- Body Starts From Here-->
     <article class="bg_gray_super_light">
             <!-- Slider ===============================================================-->
