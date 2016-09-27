@@ -65,7 +65,6 @@
             });
         });
     </script>
-
 </head>
 <body>
 <header>
@@ -158,30 +157,29 @@
     </section>
 </header>
 <!-- Large modal -->
-<!--<div id="login" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<!--<div id="loginModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             sldkjfklsjdf
         </div>
     </div>
 </div>-->
-<div id="login" class="modal fade" tabindex="" role="dialog" style="display: none !important;">
+<!--<div id="loginModal" class="modal fade" tabindex="" role="dialog" style="display: none !important;">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true" title="click x button for close this entry form">×</button>
-                <h4 class="modal-title" id="myModalLabel">Title</h4>
+                <h4 class="modal-title" id="myModalLabel">Login</h4>
             </div>
             <div class="modal-body">
                 Model Body
 
-            </div> <!-- / .modal-body -->
-        </div> <!-- / .modal-content -->
-    </div> <!-- / .modal-dialog -->
-</div>
+            </div>
+        </div>
+    </div>
+</div>-->
 <script>
     $(document).ready(function(){
-
-        $('#login').modal('show')
+        $('#myModal').modal('show')
     })
 </script>
