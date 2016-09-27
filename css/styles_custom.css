@@ -214,64 +214,57 @@ header { width: 100%; height: auto; padding: 1% 0 0 0; background: #fff; border-
 .tree h1 { color: #d73739;}
 .tree div div.demo_tree { width: auto; height:100%; margin: 30% auto; text-align: center}
 .video { width: 100%; min-height: 300px; background: #e0e0e0; margin-bottom: 40px; text-align: center; }
-.bottom_box { margin: 1% auto;}
+.bottom_box { margin: 4% auto;}
 .box1 { border: 2px solid #992233; width: 95%; height: auto; margin: 20px auto; border-radius: 3px; background: #fff; transition: ease-in-out 0.3s; opacity: 0.9; }
 .box1:hover { /*transform: rotate(4deg);*/ cursor: pointer; box-shadow: 0 2px 5px #000;}
-/*
-.marquee { width: 100%; height: 50px;  margin: 25px auto; overflow: hidden; position: relative; border: 1px solid #000; margin: 25px auto; background-color: #222;
 
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+/* For Hexagon*/
+/*.hex {
+    float: left;
+    margin-left: 3px;
+    margin-bottom: -26px;
+}
+.hex .top {
+    width: 0;
+    border-bottom: 30px solid #6C6;
+    border-left: 52px solid transparent;
+    border-right: 52px solid transparent;
+}
+.hex .middle {
+    width: 104px;
+    height: 60px;
+    background: #6C6;
+}
+.hex .bottom {
+    width: 0;
+    border-top: 30px solid #6C6;
+    border-left: 52px solid transparent;
+    border-right: 52px solid transparent;
+}
+.hex-row {
+    clear: left;
+}
+.hex-row.even {
+    margin-left: 53px;
+}*/
 
-    -webkit-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .5), 0px 1px 0px rgba(250, 250, 250, .2);
-    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .5), 0px 1px 0px rgba(250, 250, 250, .2);
+.hexagon {
+    position: relative;
+    overflow: hidden;
+    background:transparent;
+    /* add slash at the end of line to see the rhombus *
+    outline: solid 1px red;/**/
+    width: 10em; height: 10em;
+    transform: rotate(-30deg) skewX(30deg) scaleY(.866);
+    float: left; margin-right: 10px; margin-bottom: 10px;
 }
-.marquee p { position: absolute; font-family: Tahoma, Arial, sans-serif; width: 100%; height: 100%; margin: 0; line-height: 50px; text-align: center; color: #fff;
-    text-shadow: 1px 1px 0px #000000;
-    filter: dropshadow(color=#000000, offx=1, offy=1);
-    transform:translateX(100%);
+.hexagon:before {
+    position: absolute;
+    right: 6.7%; bottom: 0; left: 6.7%; top: 0;
+    transform: scaleY(1.155) skewX(-30deg) rotate(30deg);
+    background: linear-gradient(to bottom, #7d7e7d 0%,#0e0e0e 100%);
+    content: '';
 }
-@keyframes left-one {
-    0%  {
-        transform:translateX(100%);
-    }
-    10% {
-        transform:translateX(0);
-    }
-    40% {
-        transform:translateX(0);
-    }
-    50% {
-        transform:translateX(-100%);
-    }
-    100%{
-        transform:translateX(-100%);
-    }
-}
-@keyframes left-two {
-    0% {
-        transform:translateX(100%);
-    }
-    50% {
-        transform:translateX(100%);
-    }
-    60% {
-        transform:translateX(0);
-    }
-    90% {
-        transform:translateX(0);
-    }
-    100%{
-        transform:translateX(-100%);
-    }
-}
-.marquee p:nth-child(1) {
-    animation: left-one 20s ease infinite;
-}
-.marquee p:nth-child(2) {
-    animation: left-two 20s ease infinite;
-}
-*/
 
 /*For Slider*/
 * { box-sizing: border-box;}

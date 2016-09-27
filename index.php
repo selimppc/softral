@@ -78,9 +78,15 @@
                         <div class="h_space_20"></div>
 
                         <div class="tree">
-                          <div>
+                          <!--<div>
                               <div class="demo_tree"> Tree Will be placed here</div>
-                          </div>
+                          </div>-->
+                            <div class="hexagon"></div>
+                            <div class="clearfix"></div>
+                            <div class="hexagon"></div>
+                            <div class="hexagon"></div>
+                            <div class="hexagon"></div>
+                            <div class="clearfix"></div>
                         </div>
                     </div>
 
