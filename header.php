@@ -11,11 +11,19 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
 
     <!--=== Other CSS ===-->
+    <!--<link rel="stylesheet" href="css/style.css" type="text/css">-->
     <link rel="stylesheet" href="css/styles_custom.css" type="text/css">
+    <link media="all" type="text/css" rel="stylesheet" href="css/haxagon.css">
+    <link media="all" type="text/css" rel="stylesheet" href="css/homeycombs.css">
+    <link media="all" type="text/css" rel="stylesheet" href="css/video-js.css">
 
     <!--=== Jquery Scripts ===-->
     <!--<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>-->
     <script src="js/jquery.min.js" type="text/javascript"></script>
+
+    <!--=== Other Scripts ===-->
+    <script src="js/video.js" type="text/javascript"></script>
+    <script src="js/jquery.homeycombs.js"></script>
 
     <!--=== Bootstrap Scripts ===-->
     <script src="bootstrap/js/bootstrap.js" type="text/javascript"></script>
@@ -41,6 +49,19 @@
                 //fade: true,
                 focusOnSelect: true,
                 verticalSwiping: true,
+            });
+        });
+    </script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.honeycombs').honeycombs({
+                combWidth: 250,
+                margin: 10
             });
         });
     </script>
