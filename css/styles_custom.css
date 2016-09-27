@@ -199,11 +199,13 @@ header { width: 100%; height: auto; padding: 1% 0 0 0; background: #fff; border-
         nav ul.right { float: right; width: 30%; height: auto;}
 
         nav ul li { display: inline-block;}*/
-        ul.navbar-nav li a.sign { background: #d0d0d0 !important; color: #000; padding: 0px 15px !important; width:auto; display: block; font-size: 13px !important; border-radius: 20px !important; border: 0px solid #fff; }
-        ul.navbar-nav li a span.sign { background: #d0d0d0 !important; color: #000; padding: 0px 15px !important; width:auto; display: block; font-size: 13px !important; border-radius: 20px !important; border: 0px solid #fff; }
-        ul.navbar-nav li a span.sign:hover { background: #e0e0e0 !important; color: #000; }
-        ul.navbar-nav li a span.sign_1 { background: #d73739 !important; color: #fff; padding: 0px 15px !important; width: auto; display: block; font-size: 13px !important; border-radius: 20px !important; border: 0px solid #fff; }
-        ul.navbar-nav li a span.sign_1:hover { background:#e8484a !important; }
+        /*ul.navbar-nav li a.sign { padding: 0;}*/
+        ul.navbar-nav li a.sign { background: #d0d0d0 !important; color: #000; margin-right: 5px; margin-top:0.7vw; padding: 0px 15px !important; line-height:30px; width:auto; display: block; font-size: 13px !important; border-radius: 20px !important; border: 0px solid #fff; }
+        ul.navbar-nav li a.sign:hover { background: #e0e0e0 !important; color: #000; }
+
+       /* ul.navbar-nav li a.sign_1 { padding: 0; margin-right: 15px;}*/
+        ul.navbar-nav li a.sign_1 { background: #d73739 !important; color: #fff; margin-right: 15px; margin-top:0.7vw; padding: 0px 15px !important; line-height: 30px; width: auto; display: block; font-size: 13px !important; border-radius: 20px !important; border: 0px solid #fff; }
+        ul.navbar-nav li a.sign_1:hover { background:#e8484a !important; }
 
 
 

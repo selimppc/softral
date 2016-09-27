@@ -126,8 +126,8 @@
                                         </ul>
                                     </li>
                                     <!--<li><a href="#"><span class=""></span> My Softral</a></li>-->
-                                    <li><a href="#" class="sign"><span>Login</span></a></li>
-                                    <li><a href="#" class="sign_1"><span>Sign Up</span></a></li>
+                                    <li><a href="#" class="sign">Login</a></li>
+                                    <li><a href="#" class="sign_1">Sign Up</a></li>
                                 </ul>
                             </div>
                         </div>
