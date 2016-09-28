@@ -2,7 +2,8 @@
     <section class="wrap">
         <div class="container-fluid">
             <div class="col-md-4">
-                <h2 class="red_site uppercase text_shadow_2">&blk14; <!--&#x02591;&#9617;-->Softral</h2>
+                <h2 class="red_site uppercase text_shadow_2">&blk14; <span class="bot_logo_ttl">Softral<sub>TM</sub></span></h2>    <!--&#x02591;&#9617;-->
+                <!--<div class="red_site uppercase text_shadow_2 padding-0-0-10-0"><span class="size-25 bold">&blk14;</span> <img src="images/logo-2.png" width="170" style="vertical-align:top"></div>-->
                 <p class="gray size-12 text_shadow_2 tahoma line-h-20">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
             </div>
             <div class="col-md-8">

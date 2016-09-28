@@ -70,7 +70,10 @@
             <div class="container-fluid">
                 <div class="col-md-3">
                     <div class="h_left">
-                        <div class="logo text-center">Softral<sub>TM</sub></div>
+                        <!--<div class="logo text-center">Softral<sub>TM</sub></div>-->
+                        <div class="logo text-center">
+                            <a href="index.php"><img src="images/logo-1.png" class="img-responsive"></a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-9 text-center">
@@ -144,7 +147,7 @@
                                 </li>
                                 <!--<li><a href="#"><span class=""></span> My Softral</a></li>-->
                                 <li><a href="#" class="sign" data-toggle="modal" data-target="#loginModal">Login</a></li>
-                                <li><a href="#" class="sign_1">Sign Up</a></li>
+                                <li><a href="#" class="sign_1" data-toggle="modal" data-target="#signupModal">Sign Up</a></li>
                             </ul>
                         </div>
                     </div>
@@ -153,13 +156,14 @@
         </div>
     </section>
 </header>
-<!--=== Modal Div Start =======================-->
+<!--=== Modal Login Start =======================-->
 <div class="modal fade bs-example-modal-sm" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content padding-3-3-prcnt bg_trans_white_90" style="margin-top: 35%;">
             <div class="modal-header no-border text-center uppercase">
                 <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-                <h4 class="modal-title tahomabd size-25 black" id="exampleModalLabel"> Softral </h4>
+                <!--<h4 class="modal-title tahomabd size-25 black" id="exampleModalLabel"> Softral </h4>-->
+                <div class="text-center"><img src="images/logo-1.png" width="170"></div>
             </div>
             <div class="modal-body moskNormal400">
                 <form>
@@ -193,10 +197,86 @@
         </div>
     </div>
 </div>
+<!--=== Modal Signup Start =======================-->
+<div class="modal fade bs-example-modal-lg" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content padding-3-3-prcnt bg_trans_white_90" style="margin-top: 25%;">
+            <div class="modal-header text-center uppercase border_bottom">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <!--<div class="col-md-6 pull-left"><h4 class="modal-title tahomabd size-25 black text-left" id="exampleModalLabel"> Softral </h4></div>-->
+                <div class="col-md-6 text-left"><img src="images/logo-1.png" width="170"></div>
+                <div class="col-md-6 pull-right lowercase">Already have an account? <button type="submit" class="sign" data-dismiss="modal" data-toggle="modal"  data-target="#loginModal">Login</button></div>
+            </div>
+            <div class="modal-body moskNormal400">
+                <div class="col-md-12 text-center" style="padding: 5% 0 10% 0 !important;">
+                    <h1 class="size-25">Let's get started!<br>First, tell us what you're looking for.</h1>
+                </div>
+                <div class="col-md-12">
+
+                    <!--<div class="col-md-5 text-center">
+                        <div class="type_box_1">
+                            <div class="white type_box_inner">
+                                <div><i class="fa fa-user size-4-vw"></i></div>
+                                <h2 class="size-2-5-vw">Buyer</h2>
+                                <p class="size-1-vw">Find Freelance projects and grow your business</p>
+                            </div>
+                        </div>
+                    </div>-->
+                    <div class="col-md-5 text-center">
+                        <div class="type_box_circle pull-right" data-dismiss="modal" data-toggle="modal"  data-target="#sellerModal">
+                            <div class="white type_box_inner">
+                                <div><i class="fa fa-user size-50"></i></div>
+                                <h2 class="size-26">Seller</h2>
+                                <p class="size-12">Find Freelance projects and grow your business</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-center relative">
+                        <svg height="200" width="100%" >
+                            <line x1="50%" y1="0" x2="50%" y2="100%" style="stroke:rgb(150,150,150);stroke-width:3" />
+                            <line x1="45%" y1="20%" x2="45%" y2="80%" style="stroke:rgb(100,100,100);stroke-width:1" />
+                            <line x1="55%" y1="20%" x2="55%" y2="80%" style="stroke:rgb(100,100,100);stroke-width:1" />
+                        </svg>
+                    </div>
+                    <div class="col-md-5 text-center">
+                        <div class="type_box_circle pull-left" data-dismiss="modal" data-toggle="modal"  data-target="#buyerModal">
+                            <div class="white type_box_inner">
+                                <div><i class="fa fa-user size-50"></i></div>
+                                <h2 class="size-26">Buyer</h2>
+                                <p class="size-12">Find, Collaborate with, and pay an expert</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="col-md-5 text-center">
+                        <div class="type_box_2">
+                            <div class="white type_box_inner">
+                                <div><i class="fa fa-user size-4-vw"></i></div>
+                                <h2 class="size-2-5-vw">Seller</h2>
+                                <p class="size-1-vw">Find, Collaborate with, and pay an expert</p>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="modal-footer no-border">
+                <!--<div class="checkbox pull-left">
+                    <label><input type="checkbox" name="optradio" checked >Remember me</label>
+                </div>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger padding-15-10">Login</button>
+                <p>Not a member? <a href="#">Join now</a></p>-->
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--=== Modal Js ===-->
 <script>
     $('#loginModal').on('shown.bs.modal', function () {
+        $('#user_name').focus();
+    })
+    $('#signupModal').on('shown.bs.modal', function () {
         $('#user_name').focus();
     })
 

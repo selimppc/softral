@@ -17,33 +17,33 @@
                     <div class="relative">
                         <img src="images/banner/ban-0.jpg" class="img-responsive">
                         <div class="caption text-center ">
-                            <h1 class="uppercase red_dark text_shadow_2 text-center size-4-vw"><span>Find The Software Engineer</span></h1>
-                            <p class="size-2-vw normal text_shadow_1 red_site">_________for__________</p>
-                            <p class="size-3-vw black uppercase moskNormal400"><span>Your Business Or Dream Project</span><br><span>Join Us And Grow With Us </span></p>
+                            <h1 class="uppercase red_dark text_shadow_2 text-center size-3-vw">Find The Software Engineer</h1>
+                            <!--<p class="size-1-vw normal text_shadow_1 red_site">_________for__________</p>-->
+                            <p class="size-2-vw white text_shadow_2 uppercase moskNormal400">Your Business Or Dream Project<!--<br><span>Join Us And Grow With Us </span>--></p>
                         </div>
                     </div>
                     <div class="relative">
                         <img src="images/banner/ban-01.jpg" class="img-responsive">
                         <div class="caption text-center">
-                            <h1 class="uppercase red_dark text_shadow_2 text-center size-4-vw">Find The Template Designer</h1>
-                            <p class="size-2-vw normal red_site">_________for__________</p>
-                            <p class="size-3-vw gray text_shadow_2 uppercase moskNormal400">Your Business Or Dream Project<br>Join Us And Grow With Us</p>
+                            <h1 class="uppercase red_dark text_shadow_2 text-center size-3-vw">Find The Template Designer</h1>
+                            <!--<p class="size-1-vw normal red_site">_________for__________</p>-->
+                            <p class="size-2-vw white text_shadow_2 uppercase moskNormal400">Your Business Or Dream Project<!--<br>Join Us And Grow With Us--></p>
                         </div>
                     </div>
                     <div class="relative">
                         <img src="images/banner/ban-02.jpg" class="img-responsive">
                         <div class="caption text-center">
-                            <h1 class="uppercase red_dark text_shadow_2 text-center size-4-vw"><span>Find The Content Designer</span></h1>
-                            <h1 class="size-2-vw normal red_site">_________for__________</h1>
-                            <p class="size-3-vw gray text_shadow_2 uppercase moskNormal400"><span>Your Business Or Dream Project</span><br><span>Join Us And Grow With Us</span></p>
+                            <h1 class="uppercase red_dark text_shadow_2 text-center size-3-vw">Find The Content Designer</h1>
+                            <!--<h1 class="size-1-vw normal red_site">_________for__________</h1>-->
+                            <p class="size-2-vw white text_shadow_2 uppercase moskNormal400">Your Business Or Dream Project<!--<br>Join Us And Grow With Us--></p>
                         </div>
                     </div>
                     <div class="relative">
                         <img src="images/banner/ban-03.jpg" class="img-responsive">
                         <div class="caption text-center">
-                            <h1 class="uppercase red_site text_shadow_2 text-center size-4-vw"><span>Find The SEO Specialist</span></h1>
-                            <p class="size-2-vw normal red_site">_________for__________</p>
-                            <p class="size-3-vw gray text_shadow_2 uppercase moskNormal400"><span>Your Business Or Dream Project</span><br><span>Join Us And Grow With Us</span></p>
+                            <h1 class="uppercase red_site text_shadow_2 text-center size-3-vw">Find The SEO Specialist</h1>
+                            <!--<p class="size-1-vw normal red_site">_________for__________</p>-->
+                            <p class="size-2-vw white text_shadow_2 uppercase moskNormal400">Your Business Or Dream Project<!--<br><span>Join Us And Grow With Us</span>--></p>
                         </div>
                     </div>
                     <!--<div>
@@ -56,10 +56,8 @@
                     <section class="wrap">
                         <div class="container-fluid">
                             <div class="col-md-12">
-                                <div class="col-md-12">
-                                    <marquee>
-                                        <p class="size-16 moskThin100 white no-padding no-margin"> Here Must be a Creeping Line - 1 &boxVH; Here Must be a Creeping Line - 2 &boxVH; Here Must be a Creeping Line - 3 &boxVH; Here Must be a Creeping Line - 4</p>
-                                    </marquee>
+                                <div class="padding-5-5"><!--&Verbar; &Vert; &odot; &CircleDot;-->
+                                    <p class="size-15 moskLight200 white text_shadow_2 no-padding no-margin"> Here Must be a Creeping Line - 1 &odot; Here Must be a Creeping Line - 2 &odot; Here Must be a Creeping Line - 3 &odot; Here Must be a Creeping Line - 4</p>
                                 </div>
                             </div>
                         </div>
@@ -76,10 +74,12 @@
                 <div class="container-fluid">
                     <!-- Left Content-->
                     <div class="col-md-7">
-                        <div class="tree">
-                          <h1> Content Heading<sup> (If Necessary)</sup></h1>
-                          <div>
-                              <p> Content Will be placed here</p>
+                        <div class="text_content">
+                          <h1 class="size-25"> Content Heading<sup class="size-14"> (If Necessary)</sup></h1>
+                          <div class="size-13">
+                              <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                              <!--<blockquote class="tahoma">Your Business and Dream Project</blockquote>
+                              <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>-->
                           </div>
                         </div>
 
@@ -427,10 +427,10 @@
 
                     <!-- For Videos-->
                     <div class="col-md-5">
-                        <div class="video">
-                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/4mJO4ec_fFI" frameborder="0" allowfullscreen></iframe>
+                        <div class="video borderimg">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/4mJO4ec_fFI" frameborder="0" autoplay allowfullscreen ></iframe>
                         </div>
-                        <div class="video">
+                        <div class="video borderimg">
                             <iframe width="100%" height="315" src="https://www.youtube.com/embed/P6IZMBMEfWU" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <!--<div class="video">
@@ -444,6 +444,10 @@
                                 </div>
                             </div>
                         </div>-->
+                        <div class="bg_gray_light" style="padding:10px; height: 100px;">
+                            <h2 class="black size-16 tahoma"><span class="red_site">&boxbox;</span> Mini box heading</h2>
+                            <p class="size-12 padding-5-0-0-0">Some Text / links / icons / anything else according to this box size.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="h_space_20"></div><div class="h_space_20"></div>
@@ -457,7 +461,7 @@
                 <div class="col-md-12">
                     <div class="col-md-12">
                         <marquee>
-                            <p class="size-16 moskThin100 white no-padding no-margin"> Here Must be a Creeping Line - 1 &boxVH; Here Must be a Creeping Line - 2 &boxVH; Here Must be a Creeping Line - 3 &boxVH; Here Must be a Creeping Line - 4</p>
+                            <p class="size-16 moskThin100 white no-padding no-margin"> Here Must be a Creeping Line - 1 &odot; Here Must be a Creeping Line - 2 &odot; Here Must be a Creeping Line - 3 &odot; Here Must be a Creeping Line - 4</p>
                         </marquee>
                     </div>
                 </div>
