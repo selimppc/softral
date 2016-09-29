@@ -65,6 +65,7 @@ sub,sup { color:#707070; }
 .bg_gray_light { background: #e0e0e0 !important;}
 .bg_gray_super_light { background: #f5f5f5 !important;}
 .bg_gray_gradient { background: linear-gradient(0deg,#d0d0d0,#ffffff) !important;}
+.bg_gray_gradient_1 { background: linear-gradient(0deg,#d0d0d0,#e0e0e0) !important;}
 .bg_red_site { background: #d73739 !important;}
 .bg_red_dark { background: #992233 !important;}
 .bg_white { background: white !important;}
@@ -81,6 +82,7 @@ sub,sup { color:#707070; }
 .bg_trans_black_70 { background: rgba(00,00,00,0.7) !important;}
 .bg_no { background: transparent!important;}
 .bg_img { background: transparent url("../images/main_bg_1-compressor.jpg") right top fixed no-repeat;}
+.bg_img_1 { background: transparent url("../images/pyramid-bg-compressor.png") top left fixed no-repeat;}
 
 .black { color: #000 !important;}
 .white { color: #fff !important;}
@@ -110,6 +112,7 @@ sub,sup { color:#707070; }
 .padding-5-5 { padding: 5px 5px !important;}
 .padding-0-0-10-0 { padding: 0 0 10px 0 !important;}
 .padding-5-0-0-0 { padding: 5px 0 0 0 !important;}
+.padding-0-0-5-0 { padding: 0 0 5px 0 !important;}
 
 .width_full { width: 100% !important;}
 
@@ -251,15 +254,27 @@ button.sign:hover { background: #e8484a !important; color: #fff; }
 .type_box_circle { width:200px; height: 200px; background: #d73739; border-radius: 50%; transition: ease-in-out 0.3s;}
 .type_box_circle:hover { background: #8c8c8c; cursor: pointer;}
 
-.tree { background: #fff; width: 100%; padding: 2%; height: auto; text-align: center !important;}
+.tree { width:auto; padding:15px; background: url("../images/pyramid-bg-0-0.5.jpg") center center no-repeat; text-align:center !important; min-height:565px !important; height:565px;}
 .tree h1 { color: #d73739;}
-.tree div div.demo_tree { width: auto; height:100%; margin: 30% auto; text-align: center}
+.hexa-section { border: 0px solid #000; max-width: 580px; margin: 0 auto;}
+/*.tree div div.demo_tree { width: auto; height:100%; margin: 30% auto; text-align: center}*/
 
-.text_content { background: #fff; width: 100%; padding: 1%; height: auto; text-align: left !important;}
+.box-shadow-1 { box-shadow: 2px 2px 5px #d0d0d0;}
+.box-shadow-2 { box-shadow: -2px -2px 5px #d0d0d0;}
+.box-shadow-3 { box-shadow: 2px 2px 5px #000000;}
+
+.text_content { background: #fff; width: auto; padding: 15px; height: auto; text-align: left !important;}
 .text_content h1 { color: #d73739;}
 
-.video { width: 100%; min-height: 300px; background: #000; margin-bottom: 30px; text-align: center; }
+.top-0 { top: 0 !important;}
+.bottom-0 { bottom: 0 !important;}
+.left-0 { left: 0 !important;}
+
+
+.vid_fixed_height { height: 570px;}
+.vid { width: 100%; padding:0 !important; text-align: center; }
 .borderimg { border-left:25px solid transparent; padding: 0px; border-right: 25px solid transparent; padding: 0px; -webkit-border-image: url(../images/vedio_fram_3.png) 36 round; /* Safari 3.1-5 */ -o-border-image: url(../images/vedio_fram_3.png) 36 round; /* Opera 11-12.1 */ border-image: url(../images/vedio_fram_3.png) 36 round;}
+.border-5-5-white { border: 5px solid #fff !important;}
 
 .bottom_box { margin: 4% auto;}
 .box1 { border: 2px solid #992233; width: 95%; height: auto; margin: 20px auto; border-radius: 3px; background: #fff; transition: ease-in-out 0.3s; opacity: 0.9; }
@@ -281,7 +296,7 @@ button.sign:hover { background: #e8484a !important; color: #fff; }
     .pusher2{margin-bottom:-15px !important;}
 }
 
-@media screen and (max-width:500px)
+@media screen and (max-width:500px) and (max-width: 989px)
 {
     /*#categories{display:none;}
     .honeycombs{display:block;}*/
@@ -291,9 +306,9 @@ button.sign:hover { background: #e8484a !important; color: #fff; }
 {
     /*#categories{display:none;}
     .honeycombs{display:block;}*/
-    .pusher2{margin-bottom:-20px !important;}
+    .pusher2{margin-bottom:-10px !important;}
 }
-@media screen and (min-width:1201px) and (max-width: 1557px)
+@media screen and (min-width:1201px) and (max-width: 2000px)
 {
     /*#categories{display:none;}
     .honeycombs{display:block;}*/

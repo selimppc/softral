@@ -200,63 +200,148 @@
 <!--=== Modal Signup Start =======================-->
 <div class="modal fade bs-example-modal-lg" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content padding-3-3-prcnt bg_trans_white_90" style="margin-top: 25%;">
-            <div class="modal-header text-center uppercase border_bottom">
+        <div class="modal-content padding-3-3-prcnt bg_trans_white_90" style="margin-top: 10%;">
+            <!--<div class="modal-header text-center uppercase border_bottom">-->
                 <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
                 <!--<div class="col-md-6 pull-left"><h4 class="modal-title tahomabd size-25 black text-left" id="exampleModalLabel"> Softral </h4></div>-->
-                <div class="col-md-6 text-left"><img src="images/logo-1.png" width="170"></div>
-                <div class="col-md-6 pull-right lowercase">Already have an account? <button type="submit" class="sign" data-dismiss="modal" data-toggle="modal"  data-target="#loginModal">Login</button></div>
-            </div>
+                <!--<div class="col-md-6 text-left"><img src="images/logo-1.png" width="170"></div>
+                <div class="col-md-6 pull-right lowercase">Already have an account? <button type="submit" class="sign" data-dismiss="modal" data-toggle="modal"  data-target="#loginModal">Login</button></div>-->
+            <!--</div>-->
             <div class="modal-body moskNormal400">
-                <div class="col-md-12 text-center" style="padding: 5% 0 10% 0 !important;">
-                    <h1 class="size-25">Let's get started!<br>First, tell us what you're looking for.</h1>
-                </div>
-                <div class="col-md-12">
+                <!--<div class="row no-padding">-->
+                    <div class="col-md-12 padding-0-0-5-0">
+                        <div class="col-md-6 text-left"><img src="images/logo-1.png" width="170"></div>
+                        <div class="col-md-6 text-right lowercase">Already have an account? <button type="submit" class="sign" data-dismiss="modal" data-toggle="modal"  data-target="#loginModal">Login</button></div>
+                    </div>
+                    <div class="col-md-12"><div class="border_bottom">&nbsp;</div></div>
+                    <div class="col-md-12 text-center" style="padding: 2% 0 2% 0 !important;">
+                        <h1 class="size-18 line-h-26 tahomabd">Let's get started!<br> First, tell us what you're looking for.</h1>
+                    </div>
+                    <div class="col-md-12">
 
-                    <!--<div class="col-md-5 text-center">
-                        <div class="type_box_1">
-                            <div class="white type_box_inner">
-                                <div><i class="fa fa-user size-4-vw"></i></div>
-                                <h2 class="size-2-5-vw">Buyer</h2>
-                                <p class="size-1-vw">Find Freelance projects and grow your business</p>
+                        <!--<div class="col-md-5 text-center">
+                            <div class="type_box_1">
+                                <div class="white type_box_inner">
+                                    <div><i class="fa fa-user size-4-vw"></i></div>
+                                    <h2 class="size-2-5-vw">Buyer</h2>
+                                    <p class="size-1-vw">Find Freelance projects and grow your business</p>
+                                </div>
+                            </div>
+                        </div>-->
+                        <div class="col-md-5 text-center">
+                            <div class="type_box_circle pull-right" data-dismiss="modal" data-toggle="modal"  data-target="#sellerModal">
+                                <div class="white type_box_inner">
+                                    <div><i class="fa fa-user size-50"></i></div>
+                                    <h2 class="size-26">Seller</h2>
+                                    <p class="size-12">Find Freelance projects and grow your business</p>
+                                </div>
                             </div>
                         </div>
-                    </div>-->
-                    <div class="col-md-5 text-center">
-                        <div class="type_box_circle pull-right" data-dismiss="modal" data-toggle="modal"  data-target="#sellerModal">
-                            <div class="white type_box_inner">
-                                <div><i class="fa fa-user size-50"></i></div>
-                                <h2 class="size-26">Seller</h2>
-                                <p class="size-12">Find Freelance projects and grow your business</p>
+                        <div class="col-md-2 text-center relative">
+                            <svg height="200" width="100%" >
+                                <line x1="50%" y1="0" x2="50%" y2="100%" style="stroke:rgb(150,0,0);stroke-width:0.5" />
+                                <line x1="45%" y1="20%" x2="45%" y2="80%" style="stroke:rgb(100,100,100);stroke-width:1" />
+                                <line x1="55%" y1="20%" x2="55%" y2="80%" style="stroke:rgb(100,100,100);stroke-width:1" />
+                            </svg>
+                        </div>
+                        <div class="col-md-5 text-center">
+                            <div class="type_box_circle pull-left" data-dismiss="modal" data-toggle="modal"  data-target="#buyerModal">
+                                <div class="white type_box_inner">
+                                    <div><i class="fa fa-user size-50"></i></div>
+                                    <h2 class="size-26">Buyer</h2>
+                                    <p class="size-12">Find, Collaborate with, and pay an expert</p>
+                                </div>
                             </div>
                         </div>
+                        <!--<div class="col-md-5 text-center">
+                            <div class="type_box_2">
+                                <div class="white type_box_inner">
+                                    <div><i class="fa fa-user size-4-vw"></i></div>
+                                    <h2 class="size-2-5-vw">Seller</h2>
+                                    <p class="size-1-vw">Find, Collaborate with, and pay an expert</p>
+                                </div>
+                            </div>
+                        </div>-->
                     </div>
-                    <div class="col-md-2 text-center relative">
-                        <svg height="200" width="100%" >
-                            <line x1="50%" y1="0" x2="50%" y2="100%" style="stroke:rgb(150,150,150);stroke-width:3" />
-                            <line x1="45%" y1="20%" x2="45%" y2="80%" style="stroke:rgb(100,100,100);stroke-width:1" />
-                            <line x1="55%" y1="20%" x2="55%" y2="80%" style="stroke:rgb(100,100,100);stroke-width:1" />
-                        </svg>
-                    </div>
-                    <div class="col-md-5 text-center">
-                        <div class="type_box_circle pull-left" data-dismiss="modal" data-toggle="modal"  data-target="#buyerModal">
-                            <div class="white type_box_inner">
-                                <div><i class="fa fa-user size-50"></i></div>
-                                <h2 class="size-26">Buyer</h2>
-                                <p class="size-12">Find, Collaborate with, and pay an expert</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!--<div class="col-md-5 text-center">
-                        <div class="type_box_2">
-                            <div class="white type_box_inner">
-                                <div><i class="fa fa-user size-4-vw"></i></div>
-                                <h2 class="size-2-5-vw">Seller</h2>
-                                <p class="size-1-vw">Find, Collaborate with, and pay an expert</p>
-                            </div>
-                        </div>
-                    </div>-->
+                <!--</div>-->
+            </div>
+            <div class="clearfix"></div>
+            <div class="modal-footer no-border">
+                <!--<div class="checkbox pull-left">
+                    <label><input type="checkbox" name="optradio" checked >Remember me</label>
                 </div>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger padding-15-10">Login</button>
+                <p>Not a member? <a href="#">Join now</a></p>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--===== Modal seller Form start==================-->
+<div class="modal fade bs-example-modal-lg" id="sellerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content padding-3-3-prcnt bg_trans_white_90" style="margin-top: 10%;">
+            <!--<div class="modal-header text-center uppercase border_bottom">-->
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <!--<div class="col-md-6 pull-left"><h4 class="modal-title tahomabd size-25 black text-left" id="exampleModalLabel"> Softral </h4></div>-->
+                <!--<div class="col-md-6 text-left"><img src="images/logo-1.png" width="170"></div>
+                <div class="col-md-6 pull-right lowercase">Already have an account? <button type="submit" class="sign" data-dismiss="modal" data-toggle="modal"  data-target="#loginModal">Login</button></div>-->
+            <!--</div>-->
+            <div class="modal-body moskNormal400">
+                <!--<div class="row no-padding">-->
+                    <div class="col-md-12 padding-0-0-5-0">
+                        <!--<div class="col-md-6 text-left"><img src="images/logo-1.png" width="170"></div>
+                        <div class="col-md-6 text-right lowercase">Already have an account? <button type="submit" class="sign" data-dismiss="modal" data-toggle="modal"  data-target="#loginModal">Login</button></div>-->
+                        <div class="text-center size-25"> Create a Free Seller Account</div>
+                    </div>
+                    <div class="col-md-12"><div class="">&nbsp;</div></div>
+                    <!--<div class="col-md-12 text-center" style="padding: 2% 0 2% 0 !important;">
+                        <h1 class="size-18 line-h-26 tahomabd">Let's get started!<br> First, tell us what you're looking for.</h1>
+                    </div>-->
+                    <div class="col-md-12">
+                        <form>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" placeholder="First name" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" placeholder="Email" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="username" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Last name" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>Bangladesh</option>
+                                        <option>India</option>
+                                        <option>Nepal</option>
+                                        <option>Bhutan</option>
+                                        <option>Myanmar</option>
+                                        <option>Pakistan</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" placeholder="password" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" checked > Yes, I understand and agree to the Softral Terms of Service.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-danger">Create</button>
+                            </div>
+                        </form>
+                    </div>
+                <!--</div>-->
             </div>
             <div class="clearfix"></div>
             <div class="modal-footer no-border">

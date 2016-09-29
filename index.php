@@ -52,12 +52,12 @@
                 </section>
 
                 <!-- Creeping text -->
-                <section class="bg_red_dark" style="margin: -30px 0 30px 0;">
+                <section class="bg_gray_gradient_1" style="margin: -30px 0 30px 0;">
                     <section class="wrap">
                         <div class="container-fluid">
                             <div class="col-md-12">
                                 <div class="padding-5-5"><!--&Verbar; &Vert; &odot; &CircleDot;-->
-                                    <p class="size-15 moskLight200 white text_shadow_2 no-padding no-margin"> Here Must be a Creeping Line - 1 &odot; Here Must be a Creeping Line - 2 &odot; Here Must be a Creeping Line - 3 &odot; Here Must be a Creeping Line - 4</p>
+                                    <p class="size-15 moskLight200 black text_shadow_1 no-padding no-margin"> Here Must be a Creeping Line - 1 &odot; Here Must be a Creeping Line - 2 &odot; Here Must be a Creeping Line - 3 &odot; Here Must be a Creeping Line - 4</p>
                                 </div>
                             </div>
                         </div>
@@ -74,18 +74,17 @@
                 <div class="container-fluid">
                     <!-- Left Content-->
                     <div class="col-md-7">
-                        <div class="text_content">
+                        <!--<div class="text_content box-shadow-1">
                           <h1 class="size-25"> Content Heading<sup class="size-14"> (If Necessary)</sup></h1>
                           <div class="size-13">
                               <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                              <!--<blockquote class="tahoma">Your Business and Dream Project</blockquote>
-                              <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>-->
+
                           </div>
                         </div>
 
-                        <div class="h_space_20"></div>
+                        <div class="h_space_20"></div>-->
 
-                        <div class="tree bg_gray_gradient">
+                        <div class="tree box-shadow-1">
                             <!--=== Hexagon Start ====================================================================-->
                             <!--<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">-->
 
@@ -426,29 +425,45 @@
                     </div>
 
                     <!-- For Videos-->
-                    <div class="col-md-5">
-                        <div class="video borderimg">
+                    <div class="col-md-5 ">
+                        <div class="col-md-12 vid_fixed_height relative">
+                        <!--<div class="video borderimg bg_img">
                             <iframe width="100%" height="315" src="https://www.youtube.com/embed/4mJO4ec_fFI" frameborder="0" autoplay allowfullscreen ></iframe>
                         </div>
                         <div class="video borderimg">
                             <iframe width="100%" height="315" src="https://www.youtube.com/embed/P6IZMBMEfWU" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <!--<div class="video">
+                        </div>-->
+                        <!--<div style="height: 15px;">&nbsp;</div>-->
+                        <div class="vid absolute left-0 top-0">
                             <div class="videos_box">
                                 <div class="videos">
-                                    <video class="video stopvideo" autoplay="" controls="" width="100%" poster="http://www.softral.com/images/Screenshot_2.png">
+                                    <video class="video stopvideo box-shadow-1 bg_white padding-5-5" style="max-height:270px;" controls width="100%" poster="http://www.softral.com/images/Screenshot_2.png">
                                         <source src="http://www.softral.com/uploads/video/sofware 2.mp4" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
                                     <div class="playpause" style="display: none;"></div>
                                 </div>
                             </div>
-                        </div>-->
-                        <div class="bg_gray_light" style="padding:10px; height: 100px;">
+                        </div>
+                        <!--<div class="bg_white" style="height: 1px;">&nbsp;</div>-->
+                        <div class="vid absolute left-0 bottom-0">
+                            <div class="videos_box">
+                                <div class="videos">
+                                    <video class="video stopvideo box-shadow-1 bg_white padding-5-5" style="max-height:270px;" controls width="100%" poster="http://www.softral.com/images/Screenshot_3.png">
+                                        <source src="http://www.softral.com/uploads/video/sofware 2.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div class="playpause" style="display: none;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="bg_gray_light" style="padding:10px; height: 100px;">
                             <h2 class="black size-16 tahoma"><span class="red_site">&boxbox;</span> Mini box heading</h2>
                             <p class="size-12 padding-5-0-0-0">Some Text / links / icons / anything else according to this box size.</p>
+                        </div>-->
                         </div>
                     </div>
+
                 </div>
                 <div class="h_space_20"></div><div class="h_space_20"></div>
             </section>
