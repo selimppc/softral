@@ -18,7 +18,7 @@
                         <img src="images/banner/ban-0.jpg" class="img-responsive">
                         <div class="caption text-center ">
                             <h1 class="uppercase red_dark text_shadow_2 text-center size-3-vw">Find The Software Engineer</h1>
-                            <!--<p class="size-1-vw normal text_shadow_1 red_site">_________for__________</p>-->
+                            <p class="size-1-vw normal red_dark text_shadow_2">___for___</p>
                             <p class="size-2-vw white text_shadow_2 uppercase moskNormal400">Your Business Or Dream Project<!--<br><span>Join Us And Grow With Us </span>--></p>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                         <img src="images/banner/ban-01.jpg" class="img-responsive">
                         <div class="caption text-center">
                             <h1 class="uppercase red_dark text_shadow_2 text-center size-3-vw">Find The Template Designer</h1>
-                            <!--<p class="size-1-vw normal red_site">_________for__________</p>-->
+                            <p class="size-1-vw normal red_dark text_shadow_2">___for___</p>
                             <p class="size-2-vw white text_shadow_2 uppercase moskNormal400">Your Business Or Dream Project<!--<br>Join Us And Grow With Us--></p>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                         <img src="images/banner/ban-02.jpg" class="img-responsive">
                         <div class="caption text-center">
                             <h1 class="uppercase red_dark text_shadow_2 text-center size-3-vw">Find The Content Designer</h1>
-                            <!--<h1 class="size-1-vw normal red_site">_________for__________</h1>-->
+                            <h1 class="size-1-vw normal red_dark text_shadow_2">___for___</h1>
                             <p class="size-2-vw white text_shadow_2 uppercase moskNormal400">Your Business Or Dream Project<!--<br>Join Us And Grow With Us--></p>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                         <img src="images/banner/ban-03.jpg" class="img-responsive">
                         <div class="caption text-center">
                             <h1 class="uppercase red_site text_shadow_2 text-center size-3-vw">Find The SEO Specialist</h1>
-                            <!--<p class="size-1-vw normal red_site">_________for__________</p>-->
+                            <p class="size-1-vw normal red_dark text_shadow_2">___for___</p>
                             <p class="size-2-vw white text_shadow_2 uppercase moskNormal400">Your Business Or Dream Project<!--<br><span>Join Us And Grow With Us</span>--></p>
                         </div>
                     </div>
@@ -485,26 +485,7 @@
     </article>-->
 
     <!-- Bottom Boxes -->
-    <article class="bg_img">
-        <section class="bg_trans_black_30">
-            <section class="wrap">
-                <div class="container-fluid">
-                    <div class="col-md-12 bottom_box">
-                        <div class="row">
-                        <!--<div class="col-md-12 bg_trans_white_70">-->
-                            <div class="col-md-2 "><div class="box1"><img src="images/bottom_slider/ban-1.jpg" class="img-responsive"></div></div>
-                            <div class="col-md-2 "><div class="box1"><img src="images/bottom_slider/ban-2.jpg" class="img-responsive"></div></div>
-                            <div class="col-md-2 "><div class="box1"><img src="images/bottom_slider/ban-3.jpg" class="img-responsive"></div></div>
-                            <div class="col-md-2 "><div class="box1"><img src="images/bottom_slider/ban-4.jpg" class="img-responsive"></div></div>
-                            <div class="col-md-2 "><div class="box1"><img src="images/bottom_slider/ban-5.jpg" class="img-responsive"></div></div>
-                            <div class="col-md-2 "><div class="box1"><img src="images/bottom_slider/ban-6.jpg" class="img-responsive"></div></div>
-                        <!--</div>-->
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </section>
-    </article>
+    <?php include("bottom_box.php"); ?>
 
     <!-- Footer -->
     <?php include('footer.php'); ?>

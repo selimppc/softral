@@ -117,9 +117,9 @@
                         </div>
 
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav uppercase">
+                            <ul class="nav navbar-nav size-13">
                                 <li class="active"><a href="#">Home</a></li>
-                                <li class=""><a href="#">About</a></li>
+                                <li class=""><a href="about.php">About Us</a></li>
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Jobs<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Job-1</a></li>
@@ -127,17 +127,20 @@
                                         <li><a href="#">Job-3</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">CHAT</a></li>
+                                <li><a href="#">Tech Mart</a></li>
                                 <li><a href="#">Members</a></li>
-                                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Pages<span class="caret"></span></a>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="contact.php">Contact Us</a></li>
+                                <!--<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Pages<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Page 1-1</a></li>
                                         <li><a href="#">Page 1-2</a></li>
                                         <li><a href="#">Page 1-3</a></li>
                                     </ul>
-                                </li>
+                                </li>-->
                             </ul>
-                            <ul class="nav navbar-nav navbar-right">
+                            <ul class="nav navbar-nav navbar-right size-13">
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">My Softral<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">My Projects</a></li>
@@ -215,7 +218,10 @@
                     </div>
                     <div class="col-md-12"><div class="border_bottom">&nbsp;</div></div>
                     <div class="col-md-12 text-center" style="padding: 2% 0 2% 0 !important;">
-                        <h1 class="size-18 line-h-26 tahomabd">Let's get started!<br> First, tell us what you're looking for.</h1>
+                        <h1 class="size-18 line-h-26 tahomabd">Welcome!<br> First, tell us what you're looking for.</h1>
+                        <div class="text-center">
+                            <img src="images/signup-pointer-image.png" class="text-center">
+                        </div>
                     </div>
                     <div class="col-md-12">
 

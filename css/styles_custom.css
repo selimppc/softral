@@ -109,6 +109,7 @@ sub,sup { color:#707070; }
 .text_shadow_1 { text-shadow: 1px 1px 2px #fff;}
 .text_shadow_2 { text-shadow: 1px 1px 2px #000;}
 .text_shadow_3 { text-shadow: 1px 1px 1px #505050;}
+.text_shadow_4 { text-shadow: 0px 0px 3px #505050;}
 
 .no-padding { padding: 0 !important;}
 .padding-2-1-prcnt { padding: 2% 2% !important;}
@@ -202,6 +203,25 @@ sub,sup { color:#707070; }
 .line-h-24 { line-height: 24px;}
 .line-h-26 { line-height: 26px;}
 
+ul.list-1 { list-style: none;}
+ul.list-1 li { padding-left: 25px; position: relative;}
+ul.list-1 li:before { width:20px; content: '⊡'; position: absolute; left: 0;}
+
+ul.list-1-1 { list-style: none;}
+ul.list-1-1 li { padding-left: 25px; position: relative;}
+ul.list-1-1 li:before { width:20px;  content: '✓'; position: absolute; left: 0;}
+
+ul.list-2 { list-style: none;}
+ul.list-2 li { line-height: 25px; }
+ul.list-2 li i {width: 20px;}
+
+ul.list-normal { list-style: none;}
+
+.heading-1 { width: 100%; text-align: center}
+.heading-1 span { position: relative; width: auto; padding: 0 8px; border: 0px solid #909090; z-index: 5;}
+.heading-1 span:before { width: 50px; content: "―"; position: absolute; left: -40px; color:#d73739;}
+.heading-1 span:after { width: 50px; content: "―"; position: absolute; right: -40px; color:#d73739;}
+
 /*=====Header==========================================================================================================*/
 header { width: 100%; height: auto; padding: 1% 0 0 0; background: #fff; border-bottom: 0px solid #000; margin: 0px;}
     .h_left { /*float: left; width: 33%; height: auto;*/}
@@ -229,13 +249,14 @@ header { width: 100%; height: auto; padding: 1% 0 0 0; background: #fff; border-
     .h_full { width: 100%; height: auto; margin: 0px;}
         nav {}
         /*menu*/
-        ul.navbar-nav li a { background: #000 !important; /*padding: 15px 15px 8px 15px;*/ border-bottom: 4px solid #000; border-top: 4px transparent; font-family: moskNormal400 }
-        ul.navbar-nav li.active a { background: #000 !important; /*padding: 15px 15px 8px 15px;*/ border-bottom: 4px solid #d73739; border-top: 4px transparent; }
+        ul.navbar-nav { border: 0px; background: none; box-shadow: none;}
+        ul.navbar-nav li a { background: #000 !important; padding: 15px 15px !important; border-bottom: 3px solid #000 !important; border-top: 4px transparent; font-family: moskNormal400 }
+        ul.navbar-nav li.active a { background: #000 !important; padding: 15px 15px; border-bottom: 3px solid #d73739 !important; border-top: 4px transparent; }
         /*ul.navbar-nav li.dropdown a.active { background: #000 !important; padding: 15px 15px 8px 15px; border-bottom: 8px solid #d73739; }*/
         /*sub-menu*/
-        ul.navbar-nav li ul.dropdown-menu {background: rgba(150,25,30,0.8) /*linear-gradient(0deg,rgba(150,25,30,0.9),rgba(00,00,00,0.9))*/ !important; padding:5px 0; margin:0;}
-        ul.navbar-nav li ul.dropdown-menu li a { background: inherit /*rgba(150,22,33,0.7)*/ !important; padding: 2px 15px; border-bottom: 0px solid #000; color: #fff; font-size:  12px; font-style:italic; }
-        ul.navbar-nav li ul.dropdown-menu li a:hover { background: rgba(22,22,33,0.7) !important; padding: 2px 15px; border-bottom: 0px solid #000; font-size: 12px; }
+        ul.navbar-nav li ul.dropdown-menu {background: rgba(250,250,250,0.8) /*linear-gradient(0deg,rgba(150,25,30,0.9),rgba(00,00,00,0.9))*/ !important; padding:5px 0; margin:0; border: 0 !important;}
+        ul.navbar-nav li ul.dropdown-menu li a { background: inherit /*rgba(150,22,33,0.7)*/ !important; padding:8px 15px !important; border-bottom:1px solid #d0d0d0 !important; color: #000; font-size:12px; transition: ease-in-out 0.3s; }
+        ul.navbar-nav li ul.dropdown-menu li a:hover { background: rgba(255,255,255,1) !important; padding: 2px 15px; border-bottom: 0px solid #000; font-size: 12px; font-weight: bold; }
 
         /*nav ul { margin: 0; padding:0; list-style: none;}
         nav ul.left { float: left; width: 70%; height: auto;}
@@ -274,6 +295,7 @@ button.sign:hover { background: #e8484a !important; color: #fff; }
 .box-shadow-1 { box-shadow: 2px 2px 5px #d0d0d0;}
 .box-shadow-2 { box-shadow: -2px -2px 5px #d0d0d0;}
 .box-shadow-3 { box-shadow: 2px 2px 5px #000000;}
+.box-shadow-4 { box-shadow: 0px 0px 8px #d0d0d0;}
 
 .text_content { background: #fff; width: auto; padding: 15px; height: auto; text-align: left !important;}
 .text_content h1 { color: #d73739;}
