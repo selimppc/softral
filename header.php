@@ -15,10 +15,10 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
     <!--=== Other CSS ===-->
     <!--<link media="all" rel="stylesheet" href="css/font-awesome.min.css" type="text/css">-->
-    <link rel="stylesheet" href="css/styles_custom.css" type="text/css">
     <link media="all" type="text/css" rel="stylesheet" href="css/haxagon.css">
     <link media="all" type="text/css" rel="stylesheet" href="css/homeycombs.css">
     <link media="all" type="text/css" rel="stylesheet" href="css/video-js.css">
+    <link rel="stylesheet" href="css/styles_custom.css" type="text/css">
 
     <!--=== Jquery Scripts ===-->
     <!--<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>-->
@@ -33,22 +33,8 @@
     <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
     <!--=== Slider Js ===-->
     <script src="slick/slick.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
-        $(document).on('ready', function() {
-            $(".regular").slick({
-                dots: true,
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                mobileFirst: true,
-                //fade: true,
-                focusOnSelect: true,
-                verticalSwiping: true,
-            });
-        });
-    </script>
+    <script src="js/custom_slider.js" type="text/javascript" charset="utf-8"></script>
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>

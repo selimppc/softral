@@ -57,7 +57,13 @@
                         <div class="container-fluid">
                             <div class="col-md-12">
                                 <div class="padding-5-5"><!--&Verbar; &Vert; &odot; &CircleDot;-->
-                                    <p class="size-15 moskLight200 black text_shadow_1 no-padding no-margin"> Here Must be a Creeping Line - 1 &odot; Here Must be a Creeping Line - 2 &odot; Here Must be a Creeping Line - 3 &odot; Here Must be a Creeping Line - 4</p>
+                                    <section class="ticker slider text-center">
+                                        <div>&odot; Here Must be a Creeping Line - 1</div>
+                                        <div>&odot; Here Must be a Creeping Line - 2</div>
+                                        <div>&odot; Here Must be a Creeping Line - 3</div>
+                                        <div>&odot; Here Must be a Creeping Line - 4</div>
+                                    </section>
+                                    <!--<p class="size-15 moskLight200 black text_shadow_1 no-padding no-margin"> Here Must be a Creeping Line - 1 &odot; Here Must be a Creeping Line - 2 &odot; Here Must be a Creeping Line - 3 &odot; Here Must be a Creeping Line - 4</p>-->
                                 </div>
                             </div>
                         </div>
@@ -463,9 +469,25 @@
                         </div>-->
                         </div>
                     </div>
-
                 </div>
-                <div class="h_space_20"></div><div class="h_space_20"></div>
+                <div class="h_space_20"></div>
+            </section>
+
+            <!-- Bottom Creeping Text -->
+            <section class="wrap">
+                <div class="container-fluid">
+                    <div class="col-md-12">
+                        <div class="no-padding bg_white box-shadow-4">
+                            <section class="bottom_slider slider red_site tahoma text-left" style="padding: 20px !important;">
+                                <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</div>
+                                <div>when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, remaining essentially unchanged.</div>
+                                <div>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently</div>
+                                <div>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
             </section>
     </article>
 

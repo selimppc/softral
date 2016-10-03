@@ -14,8 +14,8 @@
                     <a href="#"><i class="fa fa-youtube size-25" aria-hidden="true"></i></a>
                 </div>
                 <div class="col-md-12 text-right f_nav uppercase text_shadow_2">
-                    <a href="#">About Us</a> |
-                    <a href="#">Contact Us</a> |
+                    <a href="about.php">About Us</a> |
+                    <a href="contact.php">Contact Us</a> |
                     <a href="#">Escrow</a> |
                     <a href="#">Contracts</a> |
                     <a href="#">Privacy Policy</a> |
