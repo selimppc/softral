@@ -131,7 +131,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="#">My Projects</a></li>
                                         <li><a href="#">Settings</a></li>
-                                        <li><a href="#">Profile</a></li>
+                                        <li><a href="user.php">Profile</a></li>
                                     </ul>
                                 </li>
                                 <!--<li><a href="#"><span class=""></span> My Softral</a></li>-->
@@ -189,7 +189,7 @@
 <!--=== Modal Signup Start (Step-1)=======================-->
 <div class="modal fade bs-example-modal-lg" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content padding-3-3-prcnt bg_trans_white_90" style="margin-top: 10%;">
+        <div class="modal-content bg_trans_white_90" style="margin-top: 10%;">
             <!--<div class="modal-header text-center uppercase border_bottom">-->
                 <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
                 <!--<div class="col-md-6 pull-left"><h4 class="modal-title tahomabd size-25 black text-left" id="exampleModalLabel"> Softral </h4></div>-->
@@ -198,7 +198,7 @@
             <!--</div>-->
             <div class="modal-body moskNormal400">
                 <!--<div class="row no-padding">-->
-                    <div class="col-md-12 padding-0-0-5-0">
+                    <div class="col-md-12 no-padding">
                         <div class="col-md-6 text-left"><img src="images/logo-1.png" width="170"></div>
                         <div class="col-md-6 text-right lowercase">Already have an account? <button type="submit" class="sign" data-dismiss="modal" data-toggle="modal"  data-target="#loginModal">Login</button></div>
                     </div>
