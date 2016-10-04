@@ -1,6 +1,6 @@
     <!-- Header-->
     <?php include('header.php'); ?>
-    
+
     <!-- Body Starts From Here-->
     <article class="bg_gray_super_light">
             <!-- Content -->
