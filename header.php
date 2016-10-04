@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Softral</title>
-    <!--=== Fa Fonts CSS CDN===-->
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <!--=== Font awesome Fa Fonts CSS ===-->
+    <!--<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
     <!--=== Bootstrap CSS ===-->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
@@ -104,7 +105,7 @@
 
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav size-13">
-                                <li class="active"><a href="#">Home</a></li>
+                                <li class="active"><a href="index.php">Home</a></li>
                                 <li class=""><a href="about.php">About Us</a></li>
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Jobs<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
@@ -114,6 +115,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="#">Tech Mart</a></li>
+                                <li><a href="#">Chat</a></li>
                                 <li><a href="#">Members</a></li>
                                 <li><a href="#">Terms & Conditions</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
@@ -129,9 +131,18 @@
                             <ul class="nav navbar-nav navbar-right size-13">
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">My Softral<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">My Projects</a></li>
-                                        <li><a href="#">Settings</a></li>
-                                        <li><a href="user.php">Profile</a></li>
+                                        <li><a href="user.php">My Profile</a></li>
+                                        <li><a href="#">My Setting</a></li>
+                                        <li><a href="#">My Proposals</a></li>
+                                        <li><a href="#">Save Jobs</a></li>
+                                        <li><a href="#">Working Jobs</a></li>
+                                        <li><a href="#">Save Users</a></li>
+                                        <li><a href="#">My Jobs</a></li>
+                                        <li><a href="#">Escrow Contacts</a></li>
+                                        <li><a href="#">User Agreements</a></li>
+                                        <li><a href="#">My Financial Accounts</a></li>
+                                        <li><a href="#">My Workboard</a></li>
+                                        <li><a href="#">Customer Service</a></li>
                                     </ul>
                                 </li>
                                 <!--<li><a href="#"><span class=""></span> My Softral</a></li>-->
@@ -139,6 +150,7 @@
                                 <li><a href="#" class="sign_1" data-toggle="modal" data-target="#signupModal">Sign Up</a></li>
                             </ul>
                         </div>
+                        <div class="clearfix"></div>
                     </div>
                 </nav>
             </section>
@@ -187,9 +199,9 @@
     </div>
 </div>
 <!--=== Modal Signup Start (Step-1)=======================-->
-<div class="modal fade bs-example-modal-lg" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content bg_trans_white_90" style="margin-top: 10%;">
+<div class="modal fade bs-example-modal-md" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content bg_trans_white_90" style="margin-top: 5%;">
             <!--<div class="modal-header text-center uppercase border_bottom">-->
                 <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
                 <!--<div class="col-md-6 pull-left"><h4 class="modal-title tahomabd size-25 black text-left" id="exampleModalLabel"> Softral </h4></div>-->
@@ -220,27 +232,27 @@
                                 </div>
                             </div>
                         </div>-->
-                        <div class="col-md-5 text-center">
+                        <div class="col-md-5 col-sm-5 col-lg-5 text-center">
                             <div class="type_box_circle pull-right" data-dismiss="modal" data-toggle="modal"  data-target="#sellerModal">
                                 <div class="white type_box_inner">
-                                    <div><i class="fa fa-child size-50"></i></div>
-                                    <h2 class="size-26">Seller</h2>
+                                    <div class="text-center"><img src="images/freelancer-1.png" width="45"></div>
+                                    <h2 class="size-26">Freelancer</h2>
                                     <p class="size-12">Find Freelance projects and grow your business</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2 text-center relative">
+                        <div class="col-md-2 col-sm-2 col-lg-2 text-center relative">
                             <svg height="200" width="100%" >
                                 <line x1="50%" y1="0" x2="50%" y2="100%" style="stroke:rgb(80,80,80);stroke-width:1" />
                                 <line x1="45%" y1="20%" x2="45%" y2="80%" style="stroke:rgb(80,80,80);stroke-width:1" />
                                 <line x1="55%" y1="20%" x2="55%" y2="80%" style="stroke:rgb(80,80,80);stroke-width:1" />
                             </svg>
                         </div>
-                        <div class="col-md-5 text-center">
+                        <div class="col-md-5 col-sm-5 col-lg-5 text-center">
                             <div class="type_box_circle pull-left" data-dismiss="modal" data-toggle="modal"  data-target="#buyerModal">
                                 <div class="white type_box_inner">
-                                    <div><i class="fa fa-user size-50"></i></div>
-                                    <h2 class="size-26">Buyer</h2>
+                                    <div class="text-center"><img src="images/employer-1.png" width="45"></div>
+                                    <h2 class="size-26">Employer</h2>
                                     <p class="size-12">Find, Collaborate with, and pay an expert</p>
                                 </div>
                             </div>
@@ -269,7 +281,7 @@
         </div>
     </div>
 </div>
-<!--===== Modal seller Form start ( Step-2.1)==================-->
+<!--===== Modal Freelancer Form start ( Step-2.1)==================-->
 <div class="modal fade bs-example-modal-lg" id="sellerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content padding-3-3-prcnt bg_green_super_light margin_top_10_prcnt">
@@ -284,7 +296,7 @@
                     <div class="col-md-12 padding-0-0-5-0">
                         <!--<div class="col-md-6 text-left"><img src="images/logo-1.png" width="170"></div>
                         <div class="col-md-6 text-right lowercase">Already have an account? <button type="submit" class="sign" data-dismiss="modal" data-toggle="modal"  data-target="#loginModal">Login</button></div>-->
-                        <div class="text-center size-25 green_blackish">&blk14; Create a Free <strong>Seller</strong> Account</div>
+                        <div class="text-center size-25 green_blackish">&blk14; Create a <strong>Freelancer</strong> Account</div>
                     </div>
                     <div class="col-md-12"><div class="">&nbsp;</div></div>
                     <!--<div class="col-md-12 text-center" style="padding: 2% 0 2% 0 !important;">
@@ -342,7 +354,7 @@
     </div>
 </div>
 
-<!--===== Modal Buyer Form start (step-2.2)==================-->
+<!--===== Modal Employer Form start (step-2.2)==================-->
 <div class="modal fade bs-example-modal-lg" id="buyerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content padding-3-3-prcnt bg_white margin_top_10_prcnt">
@@ -357,7 +369,7 @@
                     <div class="col-md-12 padding-0-0-5-0">
                         <!--<div class="col-md-6 text-left"><img src="images/logo-1.png" width="170"></div>
                         <div class="col-md-6 text-right lowercase">Already have an account? <button type="submit" class="sign" data-dismiss="modal" data-toggle="modal"  data-target="#loginModal">Login</button></div>-->
-                        <div class="text-center size-25">&blk14; Create a Free <strong>Buyer</strong> Account</div>
+                        <div class="text-center size-25">&blk14; Create a <strong>Employer</strong> Account</div>
                     </div>
                     <div class="col-md-12"><div class="">&nbsp;</div></div>
                     <!--<div class="col-md-12 text-center" style="padding: 2% 0 2% 0 !important;">

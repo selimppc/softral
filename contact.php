@@ -11,63 +11,10 @@
 ?>
 <!-- Body Starts From Here-->
 <article class="bg_gray_super_light">
-    <!-- Slider ===============================================================-->
-    <div class="container-fluid no-padding no-margin">
-        <section class="regular slider">
-            <div class="relative">
-                <img src="images/banner/ban-0.jpg" class="img-responsive">
-                <div class="caption text-center ">
-                    <h1 class="uppercase red_dark text_shadow_2 text-center size-3-vw">Find The Software Engineer</h1>
-                    <p class="size-1-vw normal red_dark text_shadow_2">___for___</p>
-                    <p class="size-2-vw white text_shadow_2 uppercase moskNormal400">Your Business Or Dream Project<!--<br><span>Join Us And Grow With Us </span>--></p>
-                </div>
-            </div>
-            <div class="relative">
-                <img src="images/banner/ban-01.jpg" class="img-responsive">
-                <div class="caption text-center">
-                    <h1 class="uppercase red_dark text_shadow_2 text-center size-3-vw">Find The Template Designer</h1>
-                    <p class="size-1-vw normal red_dark text_shadow_2">___for___</p>
-                    <p class="size-2-vw white text_shadow_2 uppercase moskNormal400">Your Business Or Dream Project<!--<br>Join Us And Grow With Us--></p>
-                </div>
-            </div>
-            <div class="relative">
-                <img src="images/banner/ban-02.jpg" class="img-responsive">
-                <div class="caption text-center">
-                    <h1 class="uppercase red_dark text_shadow_2 text-center size-3-vw">Find The Content Designer</h1>
-                    <h1 class="size-1-vw normal red_dark text_shadow_2">___for___</h1>
-                    <p class="size-2-vw white text_shadow_2 uppercase moskNormal400">Your Business Or Dream Project<!--<br>Join Us And Grow With Us--></p>
-                </div>
-            </div>
-            <div class="relative">
-                <img src="images/banner/ban-03.jpg" class="img-responsive">
-                <div class="caption text-center">
-                    <h1 class="uppercase red_site text_shadow_2 text-center size-3-vw">Find The SEO Specialist</h1>
-                    <p class="size-1-vw normal red_dark text_shadow_2">___for___</p>
-                    <p class="size-2-vw white text_shadow_2 uppercase moskNormal400">Your Business Or Dream Project<!--<br><span>Join Us And Grow With Us</span>--></p>
-                </div>
-            </div>
-            <!--<div>
-                <img src="images/banner/ban-04.jpg">
-            </div>-->
-        </section>
-
-        <!-- Creeping text -->
-        <section class="bg_gray_gradient_1" style="margin: -30px 0 30px 0;">
-            <section class="wrap">
-                <div class="container-fluid">
-                    <div class="col-md-12">
-                        <div class="padding-5-5"><!--&Verbar; &Vert; &odot; &CircleDot;-->
-                            <p class="size-15 moskLight200 black text_shadow_1 no-padding no-margin"> Here Must be a Creeping Line - 1 &odot; Here Must be a Creeping Line - 2 &odot; Here Must be a Creeping Line - 3 &odot; Here Must be a Creeping Line - 4</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </section>
-
-        <!--<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>-->
-
-    </div>
-    <!-- Slider Ends Here-->
+    <!-- Slider -->
+    <?php //include("_slider.php"); ?>
+    <!-- News Ticker -->
+    <?php include("_newsticker.php"); ?>
 
     <!-- Content -->
     <section class="wrap">
@@ -85,20 +32,25 @@
                         <div class="row">
                             <div class="col-md-6 ">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="First Name">
+                                    <label class="control-label">First name</label>
+                                    <input type="text" class="form-control" placeholder="Enter your Name">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Company Name">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email">
+                                    <label class="control-label">Email Address</label>
+                                    <input type="email" class="form-control" placeholder="Enter your email">
                                 </div>
                             </div>
                             <div class="col-md-6 ">
                                 <div class="form-group ">
-                                    <input type="text" class="form-control" placeholder="Last Name">
+                                    <label class="control-label">Last name</label>
+                                    <input type="text" class="form-control" placeholder="Enter your lastname">
                                 </div>
                                 <div class="form-group">
+                                    <label class="control-label">Contact Number</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <!--<div class="form-group">
+                                    <label class="control-label">First name</label>
                                     <select class="form-control">
                                         <option>Select Country</option>
                                         <option>Bangladesh</option>
@@ -108,19 +60,40 @@
                                         <option>Myanmar</option>
                                         <option>Pakistan</option>
                                     </select>
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="password">
+                                </div>-->
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">City</label>
+                                            <input type="text" class="form-control" placeholder="Enter your City">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">State</label>
+                                            <input type="text" class="form-control" placeholder="Enter your State">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Country</label>
+                                            <input type="text" class="form-control" placeholder="Enter your Country">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Subject">
+                                    <label class="control-label">Subject</label>
+                                    <input type="text" class="form-control" placeholder="Enter your Subject">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                                    <label class="control-label">Your Message</label>
+                                    <textarea class="form-control" rows="5" placeholder="Type in your Message"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -133,9 +106,9 @@
                                     <div class="bordered padding-10-10">captcha image</div>
                                 </div>
                             </div>
-                            <div class="col-md-12 text-center">
+                            <div class="col-md-12 text-left">
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-danger">Send</button>
+                                    <button type="submit" class="btn btn-primary">Send</button>
                                 </div>
                             </div>
                         </div>

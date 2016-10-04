@@ -55,7 +55,7 @@
                                     <!--right (Room-2)-->
                                     <div class="col-md-3 text-right padding-5-0-0-0-vw">
                                         <div>
-                                            <a href="#" class="btn btn-xs">Edit Profile <i class="fa fa-pencil-square"></i></a>
+                                            <a href="#" class="btn btn-xs">Edit Profile <i class="fa fa-pencil-square"></i></a><br>
                                             <a href="#" class="btn btn-xs">Edit Settings <i class="fa fa-pencil-square"></i></a>
                                         </div>
                                         <div class="tahomabd size-20 padding-5-0-0-0-vw">$13.00 /hr</div>

@@ -11,69 +11,10 @@
     ?>
     <!-- Body Starts From Here-->
     <article class="bg_gray_super_light">
-            <!-- Slider ===============================================================-->
-            <div class="container-fluid no-padding no-margin">
-                <section class="regular slider">
-                    <div class="relative">
-                        <img src="images/banner/ban-0.jpg" class="img-responsive">
-                        <div class="caption text-center ">
-                            <h1 class="uppercase red_dark text_shadow_2 text-center size-3-vw">Find The Software Engineer</h1>
-                            <p class="size-1-vw normal red_dark text_shadow_2">___for___</p>
-                            <p class="size-2-vw white text_shadow_2 uppercase moskNormal400">Your Business Or Dream Project<!--<br><span>Join Us And Grow With Us </span>--></p>
-                        </div>
-                    </div>
-                    <div class="relative">
-                        <img src="images/banner/ban-01.jpg" class="img-responsive">
-                        <div class="caption text-center">
-                            <h1 class="uppercase red_dark text_shadow_2 text-center size-3-vw">Find The Template Designer</h1>
-                            <p class="size-1-vw normal red_dark text_shadow_2">___for___</p>
-                            <p class="size-2-vw white text_shadow_2 uppercase moskNormal400">Your Business Or Dream Project<!--<br>Join Us And Grow With Us--></p>
-                        </div>
-                    </div>
-                    <div class="relative">
-                        <img src="images/banner/ban-02.jpg" class="img-responsive">
-                        <div class="caption text-center">
-                            <h1 class="uppercase red_dark text_shadow_2 text-center size-3-vw">Find The Content Designer</h1>
-                            <h1 class="size-1-vw normal red_dark text_shadow_2">___for___</h1>
-                            <p class="size-2-vw white text_shadow_2 uppercase moskNormal400">Your Business Or Dream Project<!--<br>Join Us And Grow With Us--></p>
-                        </div>
-                    </div>
-                    <div class="relative">
-                        <img src="images/banner/ban-03.jpg" class="img-responsive">
-                        <div class="caption text-center">
-                            <h1 class="uppercase red_site text_shadow_2 text-center size-3-vw">Find The SEO Specialist</h1>
-                            <p class="size-1-vw normal red_dark text_shadow_2">___for___</p>
-                            <p class="size-2-vw white text_shadow_2 uppercase moskNormal400">Your Business Or Dream Project<!--<br><span>Join Us And Grow With Us</span>--></p>
-                        </div>
-                    </div>
-                    <!--<div>
-                        <img src="images/banner/ban-04.jpg">
-                    </div>-->
-                </section>
-
-                <!-- Creeping text -->
-                <section class="bg_gray_gradient_1" style="margin: -30px 0 30px 0;">
-                    <section class="wrap">
-                        <div class="container-fluid">
-                            <div class="col-md-12">
-                                <div class="padding-5-5"><!--&Verbar; &Vert; &odot; &CircleDot;-->
-                                    <section class="ticker slider text-center">
-                                        <div>&odot; Here Must be a Creeping Line - 1</div>
-                                        <div>&odot; Here Must be a Creeping Line - 2</div>
-                                        <div>&odot; Here Must be a Creeping Line - 3</div>
-                                        <div>&odot; Here Must be a Creeping Line - 4</div>
-                                    </section>
-                                    <!--<p class="size-15 moskLight200 black text_shadow_1 no-padding no-margin"> Here Must be a Creeping Line - 1 &odot; Here Must be a Creeping Line - 2 &odot; Here Must be a Creeping Line - 3 &odot; Here Must be a Creeping Line - 4</p>-->
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </section>
-
-                <!--<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>-->
-
-            </div>
-            <!-- Slider Ends Here-->
+            <!-- Slider -->
+            <?php include("_slider.php"); ?>
+            <!-- News Ticker -->
+            <?php include("_newsticker.php"); ?>
 
             <!-- Content -->
             <section class="wrap">
