@@ -121,10 +121,10 @@
                 <div class="col-md-12 padding-3-3-prcnt bg_white box-shadow-4">
                     <h2 class="size-20 red_site">Contacting us:</h2>
 
-                    <ul class="list-1-1 padding-10-10">
-                        <li><!--<i class="fa fa-phone">&nbsp;</i>-->Phone: +1 251-633-0801<br></li>
-                        <li><!--<i class="fa fa-envelope">&nbsp;</i>-->Email: admin@softral.com<br></li>
-                        <li><!--<i class="fa fa-facebook">&nbsp;</i>-->facebook: SOFTRAL2</li>
+                    <ul class=" list-normal padding-10-10">
+                        <li class="margin_bottom_3"><i class="fa fa-phone border_width_2 border_solid border_semiblack block-inline border-radius-50-prcnt w-h-25 padding-5-5 size-14">&nbsp;</i>&nbsp;: +1 251-633-0801</li>
+                        <li class="margin_bottom_3"><i class="fa fa-envelope border_width_2 border_solid border_semiblack block-inline border-radius-50-prcnt w-h-25 padding-5-5 size-12">&nbsp;</i>&nbsp;: admin@softral.com</li>
+                        <li class="margin_bottom_3"><i class="fa fa-facebook border_width_2 border_solid border_semiblack block-inline border-radius-50-prcnt w-h-25 padding-6-6 size-14">&nbsp;</i>&nbsp;: SOFTRAL2</li>
                     </ul>
                 </div>
             </div>

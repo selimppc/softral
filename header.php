@@ -109,9 +109,8 @@
                                 <li class=""><a href="about.php">About Us</a></li>
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Jobs<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Job-1</a></li>
-                                        <li><a href="#">Job-2</a></li>
-                                        <li><a href="#">Job-3</a></li>
+                                        <li><a href="#">Post a Job</a></li>
+                                        <li><a href="#">Search for Job</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Tech Mart</a></li>

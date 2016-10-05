@@ -38,13 +38,18 @@ sub,sup { color:#707070; }
 .bg_gray_super_light { background: #f5f5f5 !important;}
 .bg_gray_gradient { background: linear-gradient(0deg,#d0d0d0,#ffffff) !important;}
 .bg_gray_gradient_1 { background: linear-gradient(0deg,#d0d0d0,#e0e0e0) !important;}
+.bg_red { background: red !important;}
+.bg_red_1 { background: #dd9955 !important;}
 .bg_red_site { background: #d73739 !important;}
+.bg_red_dark { background: #992233 !important;}
+.bg_blue { background: blue !important;}
+.bg_blue_1 { background: #5599dd !important;}
 .bg_green { background: green !important;}
 .bg_green_light { background: lightgreen !important;}
 .bg_green_super_light { background: #ddffdd !important;}
 .bg_green_darksea { background: darkseagreen !important;}
 .bg_green_mediumsea { background: mediumseagreen !important;}
-.bg_red_dark { background: #992233 !important;}
+
 .bg_white { background: white !important;}
 .bg_trans_white { background: rgba(255,255,255,0.3) !important;}
 .bg_trans_white_90 { background: rgba(255,255,255,0.90) !important;}
@@ -77,8 +82,23 @@ sub,sup { color:#707070; }
 .gray_dark { color: #606060 !important;}
 
 /*== For border color*/
-.green_border { border-color: green !important;}
-.green_light_border { border-color: #aaeeaa !important;}
+.green_border, .border_green { border-color: green !important;}
+.green_light_border, .border_light_green { border-color: #aaeeaa !important;}
+.border_black { border-color: #000 !important;}
+.border_semiblack { border-color: #303030 !important;}
+
+/*== For border width*/
+.border_width_1 { border-width: 1px !important;}
+.border_width_2 { border-width: 2px !important;}
+.border_width_3 { border-width: 3px !important;}
+.border_width_4 { border-width: 4px !important;}
+.border_width_5 { border-width: 5px !important;}
+.border_width_6 { border-width: 6px !important;}
+
+/*== For border Style*/
+.border_solid { border-style: solid !important;}
+.border_dashed { border-style: dashed !important;}
+.border_dotted { border-style: dotted !important;}
 
 /*== For Text shadow*/
 .text_shadow_1 { text-shadow: 1px 1px 2px #fff;}
@@ -97,8 +117,14 @@ sub,sup { color:#707070; }
 .padding-15-25 { padding: 15px 25px !important;}
 .padding-10-7 { padding: 10px 7px !important;}
 .padding-10-10 { padding: 10px 10px !important;}
-.padding-0-10 { padding: 0 10px !important;}
+.padding-9-9 { padding: 9px 9px !important;}
+.padding-8-8 { padding: 8px 8px !important;}
+.padding-7-7 { padding: 7px 7px !important;}
+.padding-6-6 { padding: 6px 6px !important;}
 .padding-5-5 { padding: 5px 5px !important;}
+.padding-4-4 { padding: 4px 4px !important;}
+.padding-0-10 { padding: 0 10px !important;}
+
 .padding-0-0-10-0 { padding: 0 0 10px 0 !important;}
 .padding-5-0-0-0 { padding: 5px 0 0 0 !important;}
 .padding-0-0-5-0 { padding: 0 0 5px 0 !important;}
@@ -117,6 +143,13 @@ sub,sup { color:#707070; }
 .margin_top_10 { margin-top: 10px !important;}
 .margin_top_10_prcnt { margin-top: 10% !important;}
 .margin_bottom_10 { margin-bottom: 10px !important;}
+.margin_bottom_9 { margin-bottom: 9px !important;}
+.margin_bottom_8 { margin-bottom: 8px !important;}
+.margin_bottom_7 { margin-bottom: 7px !important;}
+.margin_bottom_6 { margin-bottom: 6px !important;}
+.margin_bottom_5 { margin-bottom: 5px !important;}
+.margin_bottom_4 { margin-bottom: 4px !important;}
+.margin_bottom_3 { margin-bottom: 3px !important;}
 .margin_bottom_15 { margin-bottom: 15px !important;}
 .margin_bottom_20 { margin-bottom: 20px !important;}
 .margin_bottom_25 { margin-bottom: 25px !important;}
@@ -253,7 +286,7 @@ ul.list-normal { list-style: none;}
 .profile_image_2 img {border-radius: 5px; width: 100%; height: 100%; }
 
 /*== For Rating Stars Style*/
-.ratings { width: 98%; background: #101010; height:auto; padding-left:2%;}
+.ratings { width: 100%; background: #101010; height:auto; padding-left:2%;}
 .ratings div.ratings_black_parent { width: 100px; height: 22px;}
 .ratings div.ratings_black_parent div.ratings_black_rising {background:#990000; position: absolute; left:0; top:0;}
 .ratings div.ratings_black_parent div.ratings_black_stars { width: 100px; height:27px !important; background: url("../images/rating-black.png") left center no-repeat; background-size: 100% 100%;}
@@ -276,6 +309,15 @@ ul.list-normal { list-style: none;}
 .box-shadow-2 { box-shadow: -2px -2px 5px #d0d0d0;}
 .box-shadow-3 { box-shadow: 2px 2px 5px #000000;}
 .box-shadow-4 { box-shadow: 0px 0px 8px #d0d0d0;}
+
+/*== For Border Radius */
+.border-radius-50-prcnt { border-radius: 50% !important;}
+
+/*== For Square Boxes*/
+.w-h-10 { width: 10px; height: 10px;}
+.w-h-15 { width: 15px; height: 15px;}
+.w-h-20 { width: 20px; height: 20px;}
+.w-h-25 { width: 25px; height: 25px;}
 
 /*======================================================================================================================
 ~~~~~~~~~~~~~ For Header Styling
