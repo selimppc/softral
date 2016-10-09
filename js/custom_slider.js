@@ -14,7 +14,8 @@
             fade: true,
             focusOnSelect: true,
             verticalSwiping: true,
-            cssEase: 'linear'
+            cssEase: 'linear',
+            speed: 3000,
         });
 
         $(".ticker").slick({

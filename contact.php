@@ -123,7 +123,7 @@
 
                     <ul class=" list-normal padding-10-10">
                         <li class="margin_bottom_3"><i class="fa fa-phone border_width_2 border_solid border_semiblack block-inline border-radius-50-prcnt w-h-25 padding-5-5 size-14">&nbsp;</i>&nbsp;: +1 251-633-0801</li>
-                        <li class="margin_bottom_3"><i class="fa fa-envelope border_width_2 border_solid border_semiblack block-inline border-radius-50-prcnt w-h-25 padding-5-5 size-12">&nbsp;</i>&nbsp;: admin@softral.com</li>
+                        <li class="margin_bottom_3"><i class="fa fa-envelope border_width_2 border_solid border_semiblack block-inline border-radius-50-prcnt w-h-25 padding-5-5 size-12">&nbsp;</i>&nbsp;: Admin@softral.com</li>
                         <li class="margin_bottom_3"><i class="fa fa-facebook border_width_2 border_solid border_semiblack block-inline border-radius-50-prcnt w-h-25 padding-6-6 size-14">&nbsp;</i>&nbsp;: SOFTRAL2</li>
                     </ul>
                 </div>
