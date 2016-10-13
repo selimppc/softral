@@ -22,7 +22,15 @@
                                     <!--Left (Room-2)-->
                                     <div class="col-md-3 text-left padding-5-0-0-0-vw">
                                         <h2 class="size-20 tahomabd">Work History</h2>
-                                        <span class="size-20 red_site">&starf;&starf;&starf;&starf;&star;</span><br>
+                                        <!-- <span class="size-20 red_site">&starf;&starf;&starf;&starf;&star;</span><br>-->
+                                        <div class="ratings_white">
+                                            <div class="block-inline relative ratings_white_parent">
+                                                <?php $rate = 3.5; $rate_rise = (100 * $rate)/5 ?>
+                                                <div class="ratings_white_rising" style="width: <?php echo $rate_rise; ?>%;">&nbsp;</div>
+                                                <div class="ratings_white_stars absolute" style="z-index: 1;">&nbsp;</div>
+                                            </div>
+                                        </div>
+
                                         <span class="size-12 block">77 Hours worked </span>
                                         <span class="size-12 block"> 26 Jobs </span>
                                         <span class="size-12 block"> 80% Job Success</span>
@@ -233,7 +241,14 @@
                                                 <div class="group_img"><img src="images/magento.jpg" width="100%"></div>
                                                 <div class="group_text">
                                                     <h2 class="size-13 bold">Magento Developer</h2>
-                                                    <span class="size-20 red_site">&starf;&starf;&starf;&starf;&star;</span>
+                                                    <!--<span class="size-20 red_site">&starf;&starf;&starf;&starf;&star;</span>-->
+                                                    <div class="ratings_white">
+                                                        <div class="block-inline relative ratings_white_parent">
+                                                            <?php $rate = 3.5; $rate_rise = (100 * $rate)/5 ?>
+                                                            <div class="ratings_white_rising" style="width: <?php echo $rate_rise; ?>%;">&nbsp;</div>
+                                                            <div class="ratings_white_stars absolute" style="z-index: 1;">&nbsp;</div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </div>
@@ -242,7 +257,7 @@
                                             <div class="group">
                                                 <div class="group_img"><img src="images/wordpress.png" width="100%"></div>
                                                 <div class="group_text">
-                                                    <h2 class="size-13 bold">Magento Developer</h2>
+                                                    <h2 class="size-13 bold">Wordpress Developer</h2>
                                                     <!--<span class="size-20 red_site">&starf;&starf;&starf;&star;&star;</span>-->
                                                     <div class="ratings_white">
                                                         <div class="block-inline relative ratings_white_parent">
@@ -259,7 +274,7 @@
                                             <div class="group">
                                                 <div class="group_img"><img src="images/joomla.png" width="100%"></div>
                                                 <div class="group_text">
-                                                    <h2 class="size-13 bold">Magento Developer</h2>
+                                                    <h2 class="size-13 bold">Joomla Developer</h2>
                                                     <!--<span class="size-20 red_site">&starf;&starf;&star;&star;&star;</span>-->
                                                     <div class="ratings_white">
                                                         <div class="block-inline relative ratings_white_parent">
@@ -276,7 +291,7 @@
                                             <div class="group">
                                                 <div class="group_img"><img src="images/mysql.png" width="100%"></div>
                                                 <div class="group_text">
-                                                    <h2 class="size-13 bold">Magento Developer</h2>
+                                                    <h2 class="size-13 bold">Mysql Developer</h2>
                                                     <!--<span class="size-20 red_site">&starf;&starf;&starf;&starf;&star;</span>-->
                                                     <div class="ratings_white">
                                                         <div class="block-inline relative ratings_white_parent">
